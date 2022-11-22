@@ -7,6 +7,12 @@ h5 {
   padding: 0px;
 }
 
+body hr {
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .contact table {
   margin-left: auto;
   margin-right: 0;
@@ -30,13 +36,19 @@ h5 {
   margin-right: 12%;
 }
 
+body p {
+  font-size: 15px;
+  margin: 4px;
+}
+
 .projects {
   margin-inline: 8%;
 }
 
 .project {
   margin-inline: 2%;
-  margin-bottom: 5px;
+  margin-bottom: 16px;
+  vertical-align: middle;
 }
 
 .project p {
@@ -49,5 +61,18 @@ h5 {
 
 .title img {
   margin-left: 10px;
+  vertical-align: middle;
+}
+
+.socials {
+  text-align: right;
+  margin-right: 8%;
+}
+
+.social {
+  margin-right: 0%;
+}
+
+.social img {
   vertical-align: middle;
 }

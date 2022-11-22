@@ -1,13 +1,9 @@
 head {
-  margin: 0px;
-  padding: 0px;
   color: white;
 }
 
+
 body hr {
-  width: 75%;
-  margin-top: 10px;
-  margin-bottom: 10px;
   border: 1px solid #669;
 }
 
@@ -19,9 +15,7 @@ body {
 }
 
 body p {
-  font-size: 15px;
   color: #9AB;
-  margin: 2px;
 }
 
 a:link {
