@@ -1,0 +1,38 @@
+head {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+body hr {
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #669;
+}
+
+body {
+  background-color: #061002;
+  color: lightgrey;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body p {
+  font-size: 15px;
+  color: #9AB;
+  margin: 2px;
+}
+
+a:link {
+  color: skyblue;
+}
+
+a:visited {
+  color: aqua;
+  font-style: italic;
+}
+
+a:hover {
+  color: cadetblue;
+}
