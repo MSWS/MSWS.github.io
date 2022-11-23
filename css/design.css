@@ -18,6 +18,11 @@ body p {
   font-size: 16px;
 }
 
+.current:link {
+  color: #9AB;
+  font-weight: bold;
+}
+
 a:link {
   color: skyblue;
 }
