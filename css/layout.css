@@ -7,6 +7,10 @@ h5 {
   padding: 0px;
 }
 
+h1 {
+  margin-top: 30px;
+}
+
 body hr {
   width: 75%;
   margin-top: 10px;
@@ -75,4 +79,14 @@ body p {
 
 .social img {
   vertical-align: middle;
+}
+
+footer {
+  bottom: 0px;
+  width: 100%;
+}
+
+footer p {
+  font-size: small;
+  text-align: center;
 }
