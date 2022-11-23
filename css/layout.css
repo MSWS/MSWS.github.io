@@ -49,6 +49,12 @@ body hr {
   margin-right: 12%;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 body p {
   font-size: 15px;
   margin: 4px;
@@ -90,9 +96,8 @@ body p {
   vertical-align: middle;
 }
 
-body footer {
-  bottom: 0px;
-  width: 100%;
+footer {
+  margin-top: auto;
 }
 
 body footer p {

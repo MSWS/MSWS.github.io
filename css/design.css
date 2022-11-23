@@ -35,3 +35,9 @@ a:visited {
 a:hover {
   color: cadetblue;
 }
+
+.footer {
+  color: #9AB;
+  font-size: 11px;
+  font-style: italic;
+}
