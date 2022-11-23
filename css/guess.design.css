@@ -2,9 +2,21 @@ body .form input {
   color: blue;
 }
 
+body .form input:focus {
+  border: #0F0 solid 2px;
+  border-radius: 3px;
+}
+
+body .form input:invalid {
+  border: #F00 solid 2px;
+  border-radius: 3px;
+  background-color: #F00;
+}
+
 .formFeedback * {
   color: #9FF;
   background-color: #180845;
+  border-radius: 10px;
 }
 
 #answer {

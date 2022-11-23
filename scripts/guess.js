@@ -6,6 +6,19 @@ let knownMin = min, knownMax = max;
 
 window.onload = init;
 
+const hints = [
+  "Guess a number between %min% and %max%.",
+  "I'm thinking of a number between %min% and %max%.",
+  "I'm considering a number between %min% and %max%.",
+  "How many fingers am I holding up? (%min%-%max%)",
+  "I wish we had %min%-%max% many more frozen movies.",
+  "I saw %min%-%max% FBI agents outside, how many do you see?",
+  "On scale of %min%-%max%, how much do you like me?",
+  "On scale of %min%-%max%, how quirky am I?",
+  "How many questions do I have? (%min%-%max%)",
+  "Roll a %min%-%max% sided die.",
+];
+
 function init() {
   feedbackText = document.getElementById("feedback");
   guessBox = document.getElementById("guessBox");
@@ -17,7 +30,7 @@ function init() {
   calcAnswer();
 
   let hint = document.getElementById("hint");
-  hint.innerText = hint.innerText.replace("%min%", min).replace("%max%", max);
+  hint.innerText = (hints[Math.floor(Math.random() * hints.length)]).replace("%min%", min).replace("%max%", max);
 
   guessBox.addEventListener("keydown", onPress);
 }
@@ -52,10 +65,15 @@ function guess() {
       text += ", and I only changed it " + changes + " time" + (changes == 1 ? "" : "s") + "! ;D";
     else
       text += "."
+    if (guesses == 1)
+      text += "\nImpressive!";
+    if (answer == 69)
+      text += " (Nice)";
 
     answerText.innerText = text;
     guessButton.value = "Play Again";
     guessButton.disabled = true;
+    guessBox.disabled = true;
     guesses = 0;
     setTimeout(() => {
       guessButton.disabled = false;
@@ -72,12 +90,42 @@ function guess() {
   guessBox.placeholder = Math.round((knownMin + knownMax) / 2.0);
 
   let feedback = guesses > 1 ? feedbackText.innerText + "\n" : "";
-  feedback += "The answer is" + (g < answer ? " higher" : " lower") + " than " + g + ".";
-  if (g < min || g > max) {
+  feedback += "The answer is " + (g < answer ? "bigger" : "smaller") + " than " + g + ".";
+  let extra = guesses == 1;
+  if (guesses == 1) {
+    switch (g) {
+      case 69:
+        feedback += " (Nice)";
+        break;
+      case 420:
+        feedback += " (Timezones were never my thing)";
+        break;
+      case 314:
+        feedback += " (So dumb, and so smart)";
+        break;
+      case 271:
+        feedback += " https://youtu.be/Qskm9MTz2V4";
+        break;
+      case 666:
+        feedback += " EVIL!";
+        break;
+      case 999:
+        feedback += " Dude...";
+        break;
+      default:
+        extra = false;
+        break;
+    }
+  }
+  if (g < min || g > max && !extra) {
     feedback += " (Hint: there's a hint!)";
-    hint.innerText = "Hint: " + hint.innerText;
+    emphasizeHint();
   }
   feedbackText.innerText = feedback;
+}
+
+function emphasizeHint() {
+  hint.innerText = "Hint: " + hint.innerText;
 }
 
 function reset() {
@@ -88,6 +136,7 @@ function reset() {
   answerText.innerText = origAnsText;
   guessBox.value = "";
   guessBox.placeholder = Math.round((knownMin + knownMax) / 2.0);
+  guessBox.disabled = false;
   guessButton.value = origGuessText;
 }
 
@@ -95,4 +144,5 @@ function calcAnswer() {
   answer = Math.floor(Math.random() * (knownMax - knownMin)) + (knownMin + 1);
   knownMin = min;
   knownMax = max;
+  // answer = 69;
 }
