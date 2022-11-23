@@ -40,7 +40,7 @@
 
 <body>
   <div class="form">
-    <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50">
+    <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50" pattern="\d*">
     <input type="submit" value="Guess" onclick="guess()" id="guessButton">
     <div class="formFeedback">
       <p id="feedback">Results will show up here.</p>
