@@ -34,3 +34,13 @@ a:visited {
 a:hover {
   color: cadetblue;
 }
+
+footer {
+  bottom: 0px;
+  width: 100%;
+}
+
+footer p {
+  font-size: small;
+  text-align: center;
+}

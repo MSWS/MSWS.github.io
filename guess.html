@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Primary Meta Tags -->
+  <title>Guess</title>
+  <meta name="title" content="Guess">
+  <meta name="description" content="The classic guessing game">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://msws.xyz/">
+  <meta property="og:title" content="Guess">
+  <meta property="og:description" content="The classic guessing game">
+  <meta property="og:image" content="./resources/LOGO.png"">
+
+  <!-- Twitter -->
+  <meta property=" twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://msws.xyz/guess">
+  <meta property="twitter:title" content="404">
+  <meta property="twitter:description" content="The classic guessing game">
+  <meta property="twitter:image" content="./resources/LOGO.png"">
+
+  <link rel=" icon" type="image/x-icon" href="/resources/LOGO.png">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/design.css">
+  <link rel="stylesheet" href="/css/guess.design.css">
+
+  <meta name="theme-color" content="#EE2A22">
+  <script src="/scripts/guess.js"="init()"></script>
+
+  <div class="title">
+    <h1>Guess Me!</h1>
+    <h4 id="hint">Thinking of a number between %min%-%max%</h3>
+  </div>
+  </div>
+  <hr>
+</head>
+
+<body>
+  <div class="form">
+    <input type="number" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50">
+    <input type="submit" value="Guess" onclick="guess()" id="guessButton">
+    <div class="formFeedback">
+      <p id="feedback">Results will show up here.</p>
+      <p id="answer"></p>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <p>©2022 Isaac. All rights reserved.</p>
+</footer>
