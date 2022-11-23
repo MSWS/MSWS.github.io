@@ -62,18 +62,12 @@ function guess() {
     }, 1000);
     return;
   }
-
   if (g > answer) {
     if (g < knownMax)
       knownMax = g;
-    else if (g > knownMin)
-      knownMin = g;
-  } else {
-    if (g > knownMin)
-      knownMin = g;
-    else if (g > knownMin)
-      knownMin = g;
-  }
+  } else if (g > knownMin)
+    knownMin = g;
+
   guessBox.value = "";
   guessBox.placeholder = Math.round((knownMin + knownMax) / 2.0);
 

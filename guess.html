@@ -6,7 +6,7 @@
   <meta name="title" content="Guess">
   <meta name="description" content="The classic guessing game">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://msws.xyz/">
@@ -40,7 +40,7 @@
 
 <body>
   <div class="form">
-    <input type="number" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50">
+    <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50">
     <input type="submit" value="Guess" onclick="guess()" id="guessButton">
     <div class="formFeedback">
       <p id="feedback">Results will show up here.</p>
