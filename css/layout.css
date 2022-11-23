@@ -81,12 +81,12 @@ body p {
   vertical-align: middle;
 }
 
-footer {
+body footer {
   bottom: 0px;
   width: 100%;
 }
 
-footer p {
-  font-size: small;
+body footer p {
+  font-size: 12px;
   text-align: center;
 }
