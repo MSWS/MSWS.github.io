@@ -1,5 +1,5 @@
 let target = window.location.href;
-let matches = RegExp('(:|\\.)([0-9]|\S){2,5}\/.+').exec(target);
+let matches = RegExp('(:|\\.)([0-9]|\\S){2,5}\\/.+').exec(target);
 
 let match = target.substring(matches.index, matches.index + matches[0].length);
 match = match.substring(match.indexOf("/") + 1);
