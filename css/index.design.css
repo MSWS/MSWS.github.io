@@ -13,3 +13,11 @@
 #paypal {
   color: skyblue;
 }
+
+#discord {
+  background: linear-gradient(75deg, #121034 0%, #090979 40%, #00D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-clip: ; */
+  font-weight: bold;
+}

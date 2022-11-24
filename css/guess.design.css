@@ -15,12 +15,14 @@ body .form input:invalid {
 
 .formFeedback * {
   color: #9FF;
-  background-color: #180845;
+  background-color: #130341;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 #answer {
   color: #9F9;
   background-color: #004508;
   font-weight: bold;
+  font-size: 17px;
 }

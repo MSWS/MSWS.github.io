@@ -51,28 +51,15 @@ body hr {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 98vh;
   display: flex;
   flex-direction: column;
+  margin-inline: 5%;
 }
 
 body p {
   font-size: 15px;
   margin: 4px;
-}
-
-.projects {
-  margin-inline: 8%;
-}
-
-.project {
-  margin-inline: 2%;
-  margin-bottom: 16px;
-  vertical-align: middle;
-}
-
-.project p {
-  margin-inline: 1%;
 }
 
 .title {

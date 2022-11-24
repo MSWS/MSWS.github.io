@@ -4,8 +4,13 @@
 
 .resume_content {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 120vh;
+  margin-inline: auto auto;
 }
 
 .lefthr {
   margin-left: 0;
+  border: 1px lightblue solid;
+  max-width: 650pt;
+  width: 100%;
 }

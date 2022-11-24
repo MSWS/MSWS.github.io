@@ -41,17 +41,18 @@
     <a href="/resume.html">Resume</a>
     <a href="/guess.html" class="current">Guess</a>
   </ul>
+</header>
+
+<body>
   <div class="title">
     <h1>Guess Me!</h1>
     <h4 id="hint">Thinking of a number between %min%-%max%</h3>
   </div>
-</header>
-
-<body>
-
+  <br>
   <div class="form">
     <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50" pattern="\d*">
     <input type="submit" value="Guess" onclick="guess()" id="guessButton">
+    <br>
     <div class="formFeedback">
       <p id="feedback">Results will show up here.</p>
       <p id="answer"></p>

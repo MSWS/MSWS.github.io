@@ -26,7 +26,6 @@ body .form input {
 }
 
 .formFeedback * {
-  font-size: 15px;
   text-align: center;
   margin: auto auto;
   width: fit-content;
@@ -35,6 +34,5 @@ body .form input {
 }
 
 #answer {
-  font-size: 16px;
   text-align: center;
 }
