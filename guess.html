@@ -35,22 +35,20 @@
 </head>
 
 <header>
+  <ul>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/resume.html">Resume</a>
+    <a href="/guess.html" class="current">Guess</a>
+  </ul>
   <div class="title">
     <h1>Guess Me!</h1>
     <h4 id="hint">Thinking of a number between %min%-%max%</h3>
   </div>
-
-  <ul>
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/resume.pdf">Resume</a>
-    <a href="/guess.html" class="current">Guess</a>
-  </ul>
-
-  <hr>
 </header>
 
 <body>
+
   <div class="form">
     <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50" pattern="\d*">
     <input type="submit" value="Guess" onclick="guess()" id="guessButton">
