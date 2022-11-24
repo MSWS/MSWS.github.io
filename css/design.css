@@ -7,10 +7,10 @@ body hr {
 }
 
 body {
-  background-color: #061002;
+  background-color: #050101;
   color: lightgrey;
   font-size: 18px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace, consolas, monospace;
 }
 
 body p {
