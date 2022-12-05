@@ -22,7 +22,8 @@ function init() {
     a.appendChild(document.createTextNode(page));
     a.href = pages[page];
 
-    if (pages[page] == window.location.pathname.split("/").pop())
+    let path = window.location.pathname.split("/").pop();
+    if (pages[page] == path || path == "" && pages[page] == "index.html")
       a.classList.add("current");
     ul.append(a);
   }
