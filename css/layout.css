@@ -3,6 +3,10 @@ header ul {
   padding: 0;
 }
 
+ul a {
+  margin-inline: 2%;
+}
+
 header ul a {
   text-decoration: none;
 }

@@ -1,0 +1,10 @@
+.aboutme {
+  margin-inline: auto auto;
+  padding: 5%;
+  padding-right: 1%;
+}
+
+.aboutme p {
+  margin-inline-start: 2%;
+  margin-bottom: 15px;
+}

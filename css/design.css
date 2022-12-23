@@ -10,12 +10,31 @@ body {
   background-color: #050101;
   color: lightgrey;
   font-size: 18px;
-  font-family: 'Courier New', Courier, monospace, consolas, monospace;
+  font-family: 'gg-sans', Courier, monospace, consolas, monospace;
+}
+
+@font-face {
+  font-family: gg-sans;
+  src: url("../MSWS.github.io/resources/gg_sans_Normal.ttf") format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: gg-sans;
+  src: url("../MSWS.github.io/resources/gg_sans_Bold.ttf") format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: gg-sans;
+  src: url("../MSWS.github.io/resources/gg_sans_Normal_Italic.ttf") format('truetype');
+  font-style: italic;
 }
 
 body p {
   color: #9AB;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .current:link {

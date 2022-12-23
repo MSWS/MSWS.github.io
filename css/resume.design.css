@@ -1,9 +1,4 @@
-.menu {
-  font-family: 'Courier New', Courier, monospace, consolas, monospace;
-}
-
 .resume_content {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 120vh;
   margin-inline: auto auto;
 }

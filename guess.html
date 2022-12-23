@@ -32,32 +32,29 @@
   <meta name="theme-color" content="#EE2A22">
   <script src="/scripts/guess.js"></script>
   <script src="/scripts/footer.js" defer></script>
+  <script src="/scripts/menu.js"></script>
 </head>
 
-<header>
-  <ul>
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/resume.html">Resume</a>
-    <a href="/guess.html" class="current">Guess</a>
-  </ul>
-</header>
+<header></header>
 
 <body>
   <div class="title">
     <h1>Guess Me!</h1>
     <h4 id="hint">Thinking of a number between %min%-%max%</h3>
   </div>
-  <br>
-  <div class="form">
-    <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50" pattern="\d*">
-    <input type="submit" value="Guess" onclick="guess()" id="guessButton">
-    <br>
-    <div class="formFeedback">
-      <p id="feedback">Results will show up here.</p>
-      <p id="answer"></p>
+  <hr>
+  </header>
+
+  <body>
+    <div class="form">
+      <input type="tel" size='2' min="0" max="100" maxlength="3" id="guessBox" placeholder="50" pattern="\d*">
+      <input type="submit" value="Guess" onclick="guess()" id="guessButton">
+      <br>
+      <div class="formFeedback">
+        <p id="feedback">Results will show up here.</p>
+        <p id="answer"></p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 
 </html>

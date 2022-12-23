@@ -4,7 +4,7 @@ let answerText, origGuessText;
 const min = 0, max = 100;
 let knownMin = min, knownMax = max;
 
-window.onload = init;
+window.addEventListener("load", init);
 
 const hints = [
   "Guess a number between %min% and %max%.",
