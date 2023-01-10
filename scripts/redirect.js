@@ -12,7 +12,8 @@ const map = {
   "playlist": "https://music.youtube.com/playlist?list=PLgCdlfyStH3fMphQSEQYMB1N0RM7h8xBU",
   "discord": "https://discord.gg/A4dFdzZFHh",
   "resume": "https://msws.xyz/resume.html/",
-  "egoss": "https://discord.gg/qGyYm8kK5W"
+  "egoss": "https://discord.gg/qGyYm8kK5W",
+  "topsecret": "https://youtu.be/dQw4w9WgXcQ"
 }
 
 if (match in map)
