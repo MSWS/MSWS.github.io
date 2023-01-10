@@ -11,7 +11,8 @@ const map = {
   "sonitor": "https://www.edgegamers.com/threads/374889/",
   "playlist": "https://music.youtube.com/playlist?list=PLgCdlfyStH3fMphQSEQYMB1N0RM7h8xBU",
   "discord": "https://discord.gg/A4dFdzZFHh",
-  "resume": "https://msws.xyz/resume.html/"
+  "resume": "https://msws.xyz/resume.html/",
+  "egoss": "https://discord.gg/qGyYm8kK5W"
 }
 
 if (match in map)
