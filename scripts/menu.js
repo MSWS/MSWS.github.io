@@ -2,7 +2,7 @@ const pages = {
   "Home": "index.html",
   "About": "about.html",
   "Resume": "./Resume.pdf",
-  "Guess": "guess.html"
+  "Paste": "https://paste.msws.xyz/"
 }
 
 window.addEventListener("load", init);
