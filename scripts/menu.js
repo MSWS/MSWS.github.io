@@ -1,7 +1,7 @@
 const pages = {
   "Home": "index.html",
   "About": "about.html",
-  "Resume": "resume.html",
+  "Resume": "./Resume.pdf",
   "Guess": "guess.html"
 }
 
@@ -20,6 +20,10 @@ function init() {
   for (let page in pages) {
     let a = document.createElement("a");
     a.appendChild(document.createTextNode(page));
+
+    if (page === "Resume")
+      a.download = "";
+
     a.href = pages[page];
 
     let path = window.location.pathname.split("/").pop();
