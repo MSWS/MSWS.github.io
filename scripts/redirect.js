@@ -13,7 +13,8 @@ const map = {
   "discord": "https://discord.gg/A4dFdzZFHh",
   "resume": "https://msws.xyz/resume.html/",
   "egoss": "https://discord.gg/qGyYm8kK5W",
-  "topsecret": "https://youtu.be/dQw4w9WgXcQ"
+  "topsecret": "https://youtu.be/dQw4w9WgXcQ",
+  "audit": "https://docs.google.com/spreadsheets/d/16xoubtD7E54jdlCjA0i8jCeBda5kOJW7tNVIeus2Ouo/"
 }
 
 if (match in map)
