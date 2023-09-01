@@ -15,20 +15,20 @@ body {
 
 @font-face {
   font-family: gg-sans;
-  src: url("../MSWS.github.io/resources/gg_sans_Normal.ttf") format('truetype');
+  src: url("../resources/gg_sans_Normal.ttf") format('truetype');
   font-style: normal;
 }
 
 @font-face {
   font-family: gg-sans;
-  src: url("../MSWS.github.io/resources/gg_sans_Bold.ttf") format('truetype');
+  src: url("../resources/gg_sans_Bold.ttf") format('truetype');
   font-style: normal;
   font-weight: bold;
 }
 
 @font-face {
   font-family: gg-sans;
-  src: url("../MSWS.github.io/resources/gg_sans_Normal_Italic.ttf") format('truetype');
+  src: url("../resources/gg_sans_Normal_Italic.ttf") format('truetype');
   font-style: italic;
 }
 
