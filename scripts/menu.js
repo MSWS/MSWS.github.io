@@ -1,6 +1,7 @@
 const pages = {
   "Home": "index.html",
   "About": "about.html",
+  "Discord": "https://msws.xyz/discord",
   "Resume": "./Resume.pdf",
   "Paste": "https://paste.msws.xyz/"
 }
