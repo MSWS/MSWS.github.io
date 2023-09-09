@@ -3,7 +3,8 @@ const pages = {
   "About": "about.html",
   "Discord": "https://msws.xyz/discord",
   "Resume": "./Resume.pdf",
-  "Paste": "https://paste.msws.xyz/"
+  "Paste": "https://paste.msws.xyz/",
+  "Stats": "https://msws.xyz/stats"
 }
 
 window.addEventListener("load", init);

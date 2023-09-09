@@ -1,4 +1,4 @@
-let colors = ['C99', '9C9', '99C', 'CC9', '9CC', 'CCC']
+let colors = ['9ca3af']
 
 let p = 0;
 
