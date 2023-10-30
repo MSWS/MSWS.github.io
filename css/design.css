@@ -7,8 +7,8 @@ body hr {
 }
 
 body {
-  background-color: #050101;
-  color: lightgrey;
+  background-color: #0a0a0a; /* Neutral 950 */
+  color: #cbd5e1; /* Slate 300 */
   font-size: 18px;
   font-family: 'gg-sans', Courier, monospace, consolas, monospace;
 }
@@ -33,30 +33,30 @@ body {
 }
 
 body p {
-  color: #9AB;
+  color: #94a3b8; /* Slate 400 */
   font-size: 22px;
 }
 
 .current:link {
-  color: #9AB;
+  color: #0369a1; /* Sky 700 */
   font-weight: bold;
 }
 
 a:link {
-  color: skyblue;
+  color: #38bdf8; /* Sky 400 */
 }
 
 a:visited {
-  color: aqua;
+  color: #bae6fd; /* Sky 200 */
   font-style: italic;
 }
 
 a:hover {
-  color: cadetblue;
+  color: #e0f2fe; /* Sky 100 */
 }
 
 .footer {
-  color: #9AB6;
+  color: #9ca3af;
   font-size: 11px;
   font-style: italic;
 }

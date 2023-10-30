@@ -2,7 +2,6 @@ const pages = {
   "Home": "index.html",
   "About": "about.html",
   "Discord": "https://msws.xyz/discord",
-  "Resume": "./Resume.pdf",
   "Paste": "https://paste.msws.xyz/",
   "Stats": "https://msws.xyz/stats"
 }
@@ -22,9 +21,6 @@ function init() {
   for (let page in pages) {
     let a = document.createElement("a");
     a.appendChild(document.createTextNode(page));
-
-    if (page === "Resume")
-      a.download = "";
 
     a.href = pages[page];
 
