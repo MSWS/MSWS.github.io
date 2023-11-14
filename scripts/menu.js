@@ -17,7 +17,7 @@ function init() {
         document.body.before(header);
     }
 
-    let ul = document.createElement('ul');
+    const ul = document.createElement('ul');
     ul.classList.add('header');
 
     const path = window.location.pathname.split("/").pop();

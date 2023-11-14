@@ -3,133 +3,127 @@
 <html lang="en">
 
 <head>
-  <!-- Primary Meta Tags -->
-  <title>Portfolio</title>
-  <meta name="title" content="Portfolio">
-  <meta name="description" content="Isaac' Portfolio. View my projects, platforms, etc.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://msws.xyz/">
-  <meta property="og:title" content="Portfolio">
-  <meta property="og:description" content="Isaac' Portfolio. View my projects, platforms, etc.">
-  <meta property="og:image" content="./resources/LOGO.png"">
+    <!-- Primary Meta Tags -->
+    <title>Portfolio</title>
+    <meta name="title" content="Portfolio">
+    <meta name="description" content="Isaac' Portfolio. View my projects, platforms, etc.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://msws.xyz/">
+    <meta property="og:title" content="Portfolio">
+    <meta property="og:description" content="Isaac' Portfolio. View my projects, platforms, etc.">
+    <meta property="og:image" content="./resources/LOGO.png"">
 
   <!-- Twitter -->
   <meta property=" twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://msws.xyz/">
-  <meta property="twitter:title" content="Portfolio">
-  <meta property="twitter:description" content="Isaac' Portfolio. View my projects, platforms, etc.">
-  <meta property="twitter:image" content="./resources/LOGO.png"">
+    <meta property="twitter:url" content="https://msws.xyz/">
+    <meta property="twitter:title" content="Portfolio">
+    <meta property="twitter:description" content="Isaac' Portfolio. View my projects, platforms, etc.">
+    <meta property="twitter:image" content="./resources/LOGO.png"">
 
   <link rel=" icon" type="image/x-icon" href="/resources/LOGO.png">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/design.css">
-  <link rel="stylesheet" href="/css/index.design.css">
-  <link rel="stylesheet" href="/css/index.layout.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/index.design.css">
+    <link rel="stylesheet" href="/css/index.layout.css">
 
-  <meta name="theme-color" content="#061002">
+    <meta name="theme-color" content="#061002">
 
-  <script src="/scripts/projectColors.js" defer></script>
-  <script src="/scripts/footer.js" defer></script>
-  <script src="/scripts/menu.js"></script>
+    <script src="/scripts/projectColors.js" defer></script>
+    <script src="/scripts/footer.js" defer></script>
+    <script src="/scripts/menu.js"></script>
 </head>
 
 <header>
-  <div class="title">
-    <h1>Isaac's Portfolio</h1>
-    <p>aka MSWS<img alt="Logo" src="/resources/LOGO.png" width="32"></p>
-  </div>
-  <hr>
+    <div class="title">
+        <h1>Isaac's Portfolio</h1>
+        <p>aka MSWS<img alt="Logo" src="/resources/LOGO.png" width="32"></p>
+    </div>
+    <hr>
 </header>
 
 <body>
-  <div class="row">
-    <div class="leftcol">
-      <h2>Bio</h3>
-        <p>
-          B.S Computer Science Student<br>
-          Minor in Mathematics<br>
-          Expected Graduation 2024
-        </p>
+    <div class="row">
+        <div class="leftcol">
+            <h2>Bio</h3>
+                <p>
+                    B.S Computer Science Student<br>
+                    Minor in Mathematics<br>
+                    Expected Graduation 2024
+                </p>
+        </div>
+        <div class="rightcol">
+            <h3>Contact Me</h3>
+            <div class="contact">
+                <table>
+                    <tr>
+                        <td><b>Email</b>: </td>
+                        <td><a href="mailto:contact@msws.xyz">contact@msws.xyz</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Discord</b>: </td>
+                        <td id="discord">MSWS</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="rightcol">
-      <h3>Contact Me</h3>
-      <div class="contact">
-        <table>
-          <tr>
-            <td><b>Email</b>: </td>
-            <td><a href="mailto:imodmaker@gmail.com">imodmaker@gmail.com</a></td>
-          </tr>
-          <tr>
-            <td><b>Discord</b>: </td>
-            <td id="discord">MSWS#9499</td>
-          </tr>
-        </table>
-      </div>
+    <br><br>
+    <div class="projects">
+        <h2 id="projectTitle">Projects</h2>
+        <div class="project">
+            <h3><a href="https://github.com/MSWS/JavaStats">Server Statistics</a></h3>
+            <p>A website scraper and data parser to track player statistics of a CS (or any Source)
+                server. Natively integrated with GameTracker. Originally publicly hosted using Heroku using Java
+                Springboot
+                as the framework. Further updated with Xenforo API support for auto-posting.</p>
+            </p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/MSWS/Phone">Discord SMS Proxy Bot</a></h3>
+            <p>A Discord Bot that uses <a href="https://www.twilio.com/en-us">Twilio</a> to relay messages across SMS
+                and Discord.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/MSWS/EnderShortcut">EnderShortcut</a></h3>
+            <p>A Minecraft Spigot Plugin to allow for players to easily access their enderchest from within their
+                inventory.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/MSWS/MSWS.github.io">This Website</a></h3>
+            <p>View the commits and source code of this website right on GitHub. Uses GitHub Pages with CSS and
+                JavaScript for styling and functionality.</p>
+        </div>
+        <div class="project">
+            <h3>Interested in more?</h3>
+            <p>You can view all my open source projects on my <a href="https://github.com/MSWS">GitHub</a>.</p>
+        </div>
     </div>
-  </div>
-  <br><br>
-  <div class="projects">
-    <h2 id="projectTitle">Projects</h2>
-    <div class="project">
-      <h3><a href="https://github.com/MSWS/JavaStats">Server Statistics</a></h3>
-      <p>A website scraper and data parser to track player statistics of a CS (or any Source)
-        server. Natively integrated with GameTracker. Was originally publicly hosted using Heroku using Java Springboot
-        as the framework. Further updated with Xenforo API support for auto-posting.</p>
-      </p>
+    <br><br>
+    <div class="socials">
+        <h2>I'm also on...</h2>
+        <div class="social">
+            <p id="youtube"><a href="https://www.youtube.com/@MSWS/"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/120px-YouTube_full-color_icon_%282017%29.svg.png"
+                        height="32" alt="YouTube"></a> Where I make <i>fun</i> videos.
+            </p>
+        </div>
+        <div class="social">
+            <p id="steam"><a href="https://steamcommunity.com/id/msws/"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png"
+                        height="32" alt="Steam"></a> Where I spend most of my freetime.
+            </p>
+        </div>
+        <div class="social">
+            <p id="spigot"><a href="https://www.spigotmc.org/members/267270/"><img
+                        src="https://static.spigotmc.org/img/spigot-og.png" height="50" alt="Spigot"></a>
+                Where I code
+                Minecraft
+                plugins.
+            </p>
+        </div>
     </div>
-    <div class="project">
-      <h3><a href="https://github.com/MSWS/bhop-reports">TamperMonkey Scripts</a></h3>
-      <p>TypeScript TamperMonkey browser scripts to enhance website functionality and automate tedious tasks.
-        Utilizied TypeScript, ESLinting, and GitHub Actions for CI/CD.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/MSWS/Tetris">Tetris</a></h3>
-      <p>The classic Tetris game written in Python. Uses pyautogui for game menu and input listening. Modular styling
-        and gameplay files. Supports ghost piece highlighting and next piece preview(s).</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/MSWS/MSWS.github.io">This Website</a></h3>
-      <p>View the commits and very source code of this website right on GitHub. Uses GitHub Pages with CSS and
-        JavaScript for styling and functionality.</p>
-    </div>
-    <div class="project">
-      <h3>Interested in more?</h3>
-      <p>You can view all my open source projects on my <a href="https://github.com/MSWS">GitHub</a>.</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="socials">
-    <h2>I'm also on...</h2>
-    <div class="social">
-      <p id="youtube"><a href="https://www.youtube.com/@MSWS/"><img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/120px-YouTube_full-color_icon_%282017%29.svg.png"
-            height="32" alt="YouTube"></a> Where I make <i>fun</i> videos.
-      </p>
-    </div>
-    <div class="social">
-      <p id="steam"><a href="https://steamcommunity.com/id/msws/"><img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png"
-            height="32" alt="Steam"></a> Where I spend most of my freetime.
-      </p>
-    </div>
-    <div class="social">
-      <p id="spigot"><a href="https://www.spigotmc.org/members/267270/"><img
-            src="https://static.spigotmc.org/img/spigot-og.png" height="50" alt="Spigot"></a>
-        Where I code
-        Minecraft
-        plugins.
-      </p>
-    </div>
-
-    <div class="social">
-      <p id="paypal"><a href="https://paypal.me/IsaacMSWS"><img
-            src="https://cdn.freebiesupply.com/logos/large/2x/paypal-icon-logo-png-transparent.png" height="32"
-            alt="PayPal"></a> If you're feeling generous ;)
-      </p>
-    </div>
-  </div>
 </body>
 
 </html>
