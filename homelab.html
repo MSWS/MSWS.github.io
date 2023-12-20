@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <title>HomeLab</title>
+    <meta name="title" content="HomeLab">
+    <meta name="description" content="Info page for my homelab setup.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://msws.xyz/homelab">
+    <meta property="og:title" content="Portfolio">
+    <meta property="og:description" content="Info page for my homelab setup.">
+    <meta property="og:image" content="./resources/LOGO.png"">
+
+    <!-- Twitter -->
+    <meta property=" twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://msws.xyz/homelab">
+    <meta property="twitter:title" content="Portfolio">
+    <meta property="twitter:description" content="Info page for my homelab setup.">
+    <meta property="twitter:image" content="./resources/LOGO.png"">
+
+  <link rel=" icon" type="image/x-icon" href="/resources/LOGO.png">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/design.css">
+  <link rel="stylesheet" href="/css/homelab.design.css">
+  <link rel="stylesheet" href="/css/homelab.layout.css">
+
+    <meta name="theme-color" content="#061002">
+
+    <script src="/scripts/projectColors.js" defer></script>
+    <!-- <script src="/scripts/footer.js" defer></script> -->
+    <script src="/scripts/menu.js"></script>
+</head>
+
+<header>
+    <div class="title">
+        <h1>Homelab</h1>
+    </div>
+    <hr>
+</header>
+
+<body>
+    <p>Using <a href="https://www.proxmox.com/en/">Proxmox</a>, each of these services is deployed using <a
+            href="https://www.docker.com/">Docker</a>. Base domain is managed by Cloudflare with proxying and caching
+        where possible.</p>
+    <br><br>
+    <div class="projects">
+        <h2 id="projectTitle">Services</h2>
+        <div class="project">
+            <h3><a href="https://www.cloudflare.com/">Cloudflare</a></h3>
+            <ul>
+                <li>
+                    <h4><a href="https://github.com/favonia/cloudflare-ddns">Cloudflare-DDNS</a></h4>
+                    <p>Updates cloudflare's DNS entries to support dynamic IP changes.</p>
+                </li>
+                <li>
+                    <h4><a href="https://github.com/cloudflare/cloudflared">Cloudflared</a></h4>
+                    <p>Restricts SSH access to cloudflared tunnels.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3>Statistics</h3>
+            <ul>
+                <li>
+                    <h4><a href="https://github.com/grafana/grafana">Grafana</a></h4>
+                    <p>Visualizes data collected by prometheus.</p>
+                </li>
+                <li>
+                    <h4><a href="https://github.com/prometheus/prometheus">Prometheus</a></h4>
+                    <p>Routinely scrapes data from various services and stores it in a time-series database.</p>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3><a href="https://hub.docker.com/r/linuxserver/swag">Swag</a></h3>
+            <p>Responsible for certificate management and reverse-proxying via <a
+                    href="https://www.nginx.com/">nginx</a>.
+            </p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/nextcloud">NextCloud</a></h3>
+            <p>Personal cloud drive for images, files, and friends.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/nextcloud">Wakapi</a></h3>
+            <p>Open-sourced wakatime website for coding statistics.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/coder/code-server">Code Server</a></h3>
+            <p>Remote VS-Code instance for homework, <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>, and any
+                other projects.</p>
+        </div>
+        <div class="project">
+            <h3><a href="https://github.com/louislam/uptime-kuma">Uptime-Kuma</a></h3>
+            <p>Public status page to easily monitor service uptime and status.</p>
+        </div>
+        <div class="project">
+            <h3>Interested in more?</h3>
+            <p>You can view all my open source projects on my <a href="https://github.com/MSWS">GitHub</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>
