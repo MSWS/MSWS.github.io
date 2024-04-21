@@ -2,6 +2,7 @@ const pages = {
     "Home": "index.html",
     "About": "about.html",
     "Homelab": "homelab.html",
+    "Blog": "https://blog.msws.xyz",
     "|": null,
     "Discord": "https://msws.xyz/discord",
     "Paste": "https://paste.msws.xyz/",
