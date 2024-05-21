@@ -6,7 +6,6 @@ const pages = {
     "Blog": "https://blog.msws.xyz",
     "Discord": "https://msws.xyz/discord",
     "Paste": "https://paste.msws.xyz/",
-    "Stats": "https://msws.xyz/stats"
 }
 
 window.addEventListener("load", init);
