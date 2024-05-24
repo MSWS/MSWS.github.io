@@ -3,6 +3,7 @@ const pages = {
     "About": "about.html",
     "Homelab": "homelab.html",
     "|": null,
+    "Nodifts": "https://nodifts.msws.xyz",
     "Blog": "https://blog.msws.xyz",
     "Discord": "https://msws.xyz/discord",
     "Paste": "https://paste.msws.xyz/",
