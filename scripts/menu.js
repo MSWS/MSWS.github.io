@@ -5,7 +5,7 @@ const pages = {
     "|": null,
     "Nodifts": "https://nodifts.msws.xyz",
     "Blog": "https://blog.msws.xyz",
-    "Discord": "https://msws.xyz/discord",
+    "Discord": "https://msws.xyz/s/discord",
     "Paste": "https://paste.msws.xyz/",
 }
 
