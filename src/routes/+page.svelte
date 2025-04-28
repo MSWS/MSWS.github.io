@@ -2,6 +2,7 @@
   import logo from "$lib/assets/LOGO.png";
   import spigot from "$lib/assets/spigot.png";
   import coffee from "$lib/assets/bmc-logo.svg";
+  import gitea from "$lib/assets/gitea.webp";
 </script>
 
 <div class="w-screen min-h-screen flex flex-col h-full md:flex-row bg-gray-300">
@@ -106,7 +107,7 @@
     <div>
       <div class="p-2 rounded-tl-3xl ml-auto w-fit bg-orange-400/50">
         <div class="text-right">
-          <p class="text-2xl">
+          <p class="text-2xl font-semibold">
             <i class="fa-solid fa-person-rifle text-csorange"></i> Jailbreak
           </p>
           <p>
@@ -116,22 +117,22 @@
       </div>
 
       <div class="flex flex-col rounded-bl-3xl rounded-tl-3xl">
-        <div class="flex flex-row rounded-tl-3xl">
+        <div
+          class="flex flex-row rounded-tl-3xl bg-gradient-to-tr from-orange-400 via-orange-400 to-orange-400/50"
+        >
           <div
-            class="content-center from-yellow-600/40 bg-gradient-to-r rounded-tl-3xl pl-4"
+            class="content-center from-yellow-500 to-orange-400 bg-gradient-to-r rounded-tl-3xl pl-4"
           >
-            <span class="font-bold">Plugins</span><br />
-            <span class="text-sm">
-              All written in C# utilizing
+            <p class="font-bold">Plugins</p>
+            <p class="text-sm">
+              Written in C# utilizing
               <a
                 href="https://github.com/roflmuffin/CounterStrikeSharp"
                 class="text-blue-800 hover:text-blue-700">CS#</a
               >.
-            </span>
+            </p>
           </div>
-          <div
-            class="flex flex-col w-full space-y-2 m-4 ml-0 pl-0 divide-y-3 divide-csorange/20"
-          >
+          <div class="flex-col w-full space-y-2 m-4 ml-0 pl-0">
             <div class="flex">
               <div class="self-center">
                 <a
@@ -180,12 +181,12 @@
         </div>
         <div class="flex flex-row">
           <div
-            class="flex-col p-4 bg-yellow-500 content-around font-bold rounded-bl-3xl text-center"
+            class="flex-col p-4 bg-yellow-500 content-evenly font-bold rounded-bl-3xl text-center justify-around"
           >
-            M<br />
-            A<br />
-            P<br />
-            S<br />
+            <div>M</div>
+            <div>A</div>
+            <div>P</div>
+            <div>S</div>
           </div>
           <div class="flex-col w-full h-64 md:h-96 lg:h-128">
             <div class="group h-1/2">
@@ -219,23 +220,36 @@
       </div>
     </div>
 
-    <div class="m-2 bg-black/10">
-      <p class="text-2xl">
-        AdminMode
-        <i class="fa-solid fa-cube text-green-900"></i>
-      </p>
-      <p>
-        A Minecraft plugin written in Java allowing staff to enter an <i
-          >admin mode</i
-        >.
-      </p>
-      <p>
-        Integrates with
-        <a
-          href="https://www.spigotmc.org/resources/discordsrv.18494/"
-          class="text-blue-700 hover:text-blue-600">DiscordSRV</a
-        > for transparent logging to upper management.
-      </p>
+    <div class="p-2 bg-black/10 flex">
+      <a href="https://git.msws.xyz/MS/admin-mode" class="flex h-full">
+        <img
+          src={gitea}
+          alt="Gitea Logo"
+          class="h-16 flex self-center content-center justify-center mr-2
+        hover:scale-110"
+        /></a
+      >
+      <span>
+        <p class="text-2xl">
+          <a
+            href="https://git.msws.xyz/MS/admin-mode"
+            class="text-blue-800 hover:text-blue-700">Admin Mode</a
+          >
+          <i class="fa-solid fa-cube text-green-900"></i>
+        </p>
+        <p>
+          A Minecraft plugin written in Java allowing staff to enter an <i
+            >admin mode</i
+          >.
+        </p>
+        <p>
+          Integrates with
+          <a
+            href="https://www.spigotmc.org/resources/discordsrv.18494/"
+            class="text-blue-700 hover:text-blue-600">DiscordSRV</a
+          > for transparent logging to upper management.
+        </p>
+      </span>
     </div>
   </div>
 </div>
