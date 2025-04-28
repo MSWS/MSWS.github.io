@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="w-screen min-h-screen flex flex-col h-full md:flex-row bg-gray-300 justify-center-safe"
+  class="flex w-screen min-h-max flex-col md:flex-row bg-gray-300 justify-center-safe"
 >
   <div class="flex flex-col items-center justify-center">
     <div class="flex rounded-tr-4xl rounded-bl-4xl bg-amber-50 p-4 size-fit">
@@ -106,7 +106,7 @@
   </div>
 
   <div
-    class="flex flex-col h-fit md:h-screen content-center-safe place-content-center-safe"
+    class="flex flex-col overflow-y-auto h-fit md:h-screen content-center-safe place-content-center-safe gap-y-3"
   >
     <div>
       <div class="flex p-2 justify-end">
@@ -254,3 +254,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  @theme {
+    --bg-color: #ff0;
+  }
+</style>
