@@ -106,7 +106,7 @@
   </div>
 
   <div
-    class="flex flex-col h-fit md:h-screen content-center-safe place-content-center"
+    class="flex flex-col h-fit md:h-screen content-center-safe place-content-center-safe"
   >
     <div>
       <div class="flex p-2 justify-end">
