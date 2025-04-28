@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-csorange: #E17F0E;
+  --font-stanley: 'League Gothic', sans-serif;
 }

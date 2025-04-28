@@ -254,9 +254,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  @theme {
-    --bg-color: #ff0;
-  }
-</style>
