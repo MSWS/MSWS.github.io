@@ -1,1 +1,5 @@
-MSWS.github.io
+package.json
+.svelte-kit/
+bun.lockb
+node_modules
+build
