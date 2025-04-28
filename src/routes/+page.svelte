@@ -5,8 +5,10 @@
   import gitea from "$lib/assets/gitea.webp";
 </script>
 
-<div class="w-screen min-h-screen flex flex-col h-full md:flex-row bg-gray-300">
-  <div class="flex flex-col items-center justify-center ml-auto">
+<div
+  class="w-screen min-h-screen flex flex-col h-full md:flex-row bg-gray-300 justify-center-safe"
+>
+  <div class="flex flex-col items-center justify-center">
     <div class="flex rounded-tr-4xl rounded-bl-4xl bg-amber-50 p-4 size-fit">
       <img
         src={logo}
@@ -103,9 +105,11 @@
     </div>
   </div>
 
-  <div class="flex flex-col h-fit md:h-screen place-content-evenly ml-auto">
+  <div
+    class="flex flex-col h-fit md:h-screen content-center-safe place-content-center"
+  >
     <div>
-      <div class="p-2 rounded-tl-3xl ml-auto w-fit bg-orange-400/50">
+      <div class="flex p-2 justify-end">
         <div class="text-right">
           <p class="text-2xl font-semibold">
             <i class="fa-solid fa-person-rifle text-csorange"></i> Jailbreak
@@ -114,15 +118,12 @@
             A Counter-Strike 2 gamemode involving prisoners, guards, and guns.
           </p>
         </div>
+        <div class="inline-flex bg-csorange ml-2 w-4"></div>
       </div>
 
-      <div class="flex flex-col rounded-bl-3xl rounded-tl-3xl">
-        <div
-          class="flex flex-row rounded-tl-3xl bg-gradient-to-tr from-orange-400 via-orange-400 to-orange-400/50"
-        >
-          <div
-            class="content-center from-yellow-500 to-orange-400 bg-gradient-to-r rounded-tl-3xl pl-4"
-          >
+      <div class="flex flex-col">
+        <div class="flex flex-row">
+          <div class="content-center pl-4">
             <p class="font-bold">Plugins</p>
             <p class="text-sm">
               Written in C# utilizing
@@ -132,9 +133,9 @@
               >.
             </p>
           </div>
-          <div class="flex-col w-full space-y-2 m-4 ml-0 pl-0">
+          <div class="flex-col w-full space-y-2 m-4">
             <div class="flex">
-              <div class="self-center">
+              <div class="self-center text-center">
                 <a
                   href="https://github.com/edgegamers/Jailbreak"
                   class="font-bold text-blue-800 group hover:text-blue-700 transition-transform whitespace-nowrap"
@@ -156,7 +157,7 @@
               </span>
             </div>
             <div class="flex">
-              <div class="self-center">
+              <div class="self-center text-center">
                 <a
                   href="https://github.com/edgegamers/Gangs"
                   class="font-bold text-blue-800 group hover:text-blue-700 transition-transform whitespace-nowrap"
@@ -181,7 +182,7 @@
         </div>
         <div class="flex flex-row">
           <div
-            class="flex-col p-4 bg-yellow-500 content-evenly font-bold rounded-bl-3xl text-center justify-around"
+            class="flex-col p-4 bg-csorange content-evenly font-bold text-center justify-around text-black/90 text-shadow-lg"
           >
             <div>M</div>
             <div>A</div>
@@ -196,7 +197,7 @@
               hover:scale-y-105 hover:bg-blend-darken hover:bg-black/50 transition-all duration-200"
                 >
                   <span
-                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-amber-200 font-bold"
+                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-amber-200 font-bold text-2xl"
                     >jb_stanley</span
                   >
                 </div>
@@ -209,7 +210,7 @@
               hover:scale-y-105 hover:bg-blend-darken hover:bg-black/50 transition-all duration-200"
                 >
                   <span
-                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-red-300 font-bold"
+                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-red-300 font-bold text-2xl"
                     >jb_tetris</span
                   >
                 </div>
@@ -225,7 +226,7 @@
         <img
           src={gitea}
           alt="Gitea Logo"
-          class="h-16 flex self-center content-center justify-center mr-2
+          class="h-16 flex self-center items-center content-center justify-center mr-2 object-scale-down
         hover:scale-110"
         /></a
       >
