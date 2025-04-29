@@ -109,7 +109,6 @@
       <ul class="list-inside list-disc whitespace-nowrap">
         {#each gameNames as name, index}
           <a
-            href="#{name}"
             on:click={() => {
               activeSlide = index;
             }}
