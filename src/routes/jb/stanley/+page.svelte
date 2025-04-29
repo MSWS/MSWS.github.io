@@ -1,22 +1,37 @@
-<script>
+<script lang="ts">
   import stanley from "$lib/assets/stanley/stanley.jpg";
+  import ClimbPhoto from "$lib/assets/stanley/climb.jpg";
   import ByteClicker from "./games/byteClicker.svelte";
+  import Climb from "./games/climb.svelte";
+  import DodgeCourse from "./games/dodgeCourse.svelte";
   import GameSlide from "./gameSlide.svelte";
 
-  const games = [
-    "Byte Clicker",
-    "Climb",
-    "Dodge Course",
-    "Dropdown",
-    "Find the Difference",
-    "Hole in the Wall",
-    "Jeopardy!",
-    "Musical Chairs",
-    "Race",
-    "Reaction",
-    "Roulette",
-    "Stanley Says",
-  ];
+  // const games = [
+  //   "Byte Clicker",
+  //   "Climb",
+  //   "Dodge Course",
+  //   "Dropdown",
+  //   "Find the Difference",
+  //   "Hole in the Wall",
+  //   "Jeopardy!",
+  //   "Musical Chairs",
+  //   "Race",
+  //   "Reaction",
+  //   "Roulette",
+  //   "Stanley Says",
+  // ];
+
+  // const games = [ByteClicker, Climb, DodgeCourse];
+  const games = {
+    "Byte Clicker": ByteClicker,
+    Climb: Climb,
+    "Dodge Course": DodgeCourse,
+  };
+
+  let gameNames = Object.keys(games);
+  let gameValues = Object.values(games);
+  let gameEntries = Object.entries(games);
+  let activeSlide = 0;
 </script>
 
 <div class="font-stanley text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
@@ -92,13 +107,27 @@
     <div>
       <p class="text-3xl font-bold tracking-wider">GAMES</p>
       <ul class="list-inside list-disc whitespace-nowrap">
-        {#each games as $game}
-          <li class="hover:bg-gray-200 rounded-l-full transition-colors">
-            {$game}
-          </li>
+        {#each gameNames as name, index}
+          <a
+            href="#{name}"
+            on:click={() => {
+              activeSlide = index;
+            }}
+          >
+            <li
+              class="hover:bg-gray-200 rounded-l-full transition-colors {activeSlide ==
+              index
+                ? 'bg-gray-200'
+                : ''}"
+            >
+              {name}
+            </li>
+          </a>
         {/each}
       </ul>
     </div>
-    <div class="bg-gray-300 w-full"><ByteClicker></ByteClicker></div>
+    <div class="w-full">
+      <svelte:component this={gameEntries[activeSlide][1]}></svelte:component>
+    </div>
   </div>
 </div>

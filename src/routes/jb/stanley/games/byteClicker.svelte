@@ -5,7 +5,7 @@
   import FirstGame from "../../badges/firstGame.svelte";
 </script>
 
-<GameSlide bgUrl="$lib/assets/stanley/stanley.jpg" gameName="ByteClicker">
+<GameSlide bgUrl="$lib/assets/stanley/clicker.jpg" gameName="ByteClicker">
   {#snippet centerHeader()}
     <DoorShootable></DoorShootable>
     <SupportsTeams></SupportsTeams>
