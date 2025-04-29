@@ -193,7 +193,7 @@
             <div class="group h-1/2">
               <a href="/jb/stanley">
                 <div
-                  class="bg-[url('$lib/assets/stanley.jpg')] bg-cover bg-center size-full
+                  class="bg-[url('$lib/assets/stanley/stanley.jpg')] bg-cover bg-center size-full
               hover:scale-y-105 hover:bg-blend-darken hover:bg-black/50 transition-all duration-200"
                 >
                   <span
