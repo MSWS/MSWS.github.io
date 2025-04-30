@@ -1,7 +1,7 @@
 <script>
   import GameSlide from "../gameSlide.svelte";
 
-  import hitwImage from "$lib/assets/stanley/holeInTheWall.jpg";
+  import hitwImage from "$lib/assets/stanley/holeinthewall.jpg";
   import FirstGame from "../../badges/firstGame.svelte";
   import RequiresHp from "../../badges/requiresHp.svelte";
 </script>
