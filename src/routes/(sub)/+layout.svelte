@@ -5,7 +5,7 @@
   import logo from "$lib/assets/LOGO.png";
 </script>
 
-<nav class="size-20 m-4 mb-0 mr-0">
+<nav class="size-20 m-4 mb-0 ml-auto mr-auto md:ml-4">
   <!-- <img src={logo} alt="logo" class="pr-2" />
   <div class="text-2xl self-center text-black/80">HOME</div> -->
   <div

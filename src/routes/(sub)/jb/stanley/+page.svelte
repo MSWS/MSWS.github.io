@@ -19,7 +19,7 @@
 
 <div class="font-stanley text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
   <ul
-    class="grid align-bottom w-full font-stanley text-nowrap grid-flow-row md:grid-flow-col md:grid-cols-6 p-8 ml-4 text-center md:text-left md:list-disc"
+    class="grid w-full font-stanley text-nowrap grid-flow-row md:grid-flow-col md:grid-cols-6 p-8 ml-auto mr-auto text-center md:text-left md:list-disc"
   >
     <div class="bg-gray-200 md:bg-transparent row-span-11">
       <li>Spawn in cells</li>
