@@ -1,5 +1,5 @@
 <script>
-  import { blur, fly, scale } from "svelte/transition";
+  import { json } from "@sveltejs/kit";
 
   let {
     bgUrl,
@@ -12,10 +12,10 @@
 </script>
 
 <div
-  class="flex flex-col bg-[url('{bgUrl}')] bg-cover bg-center h-full w-full p-4"
-  out:blur
+  class="flex flex-col bg-cover bg-center h-full w-full p-4"
+  style="background-image: url({bgUrl});"
 >
-  <div class="flex text-4xl bg-black/20 p-4 h-fit w-full">
+  <div class="flex text-4xl bg-black/20 p-4 w-full">
     <span class="w-1/3">
       {gameName}
     </span>
@@ -24,7 +24,7 @@
     </span>
     <span class="text-right w-1/3">How to Play</span>
   </div>
-  <div class="text-2xl h-full text-justify">
+  <div class="text-2xl h-full text-justify backdrop-blur-sm m-4">
     <div class="flex flex-row h-full">
       <p class="w-1/2">
         {@render description?.()}

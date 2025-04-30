@@ -3,9 +3,11 @@
   import DoorShootable from "../../badges/doorShootable.svelte";
   import SupportsTeams from "../../badges/supportsTeams.svelte";
   import FirstGame from "../../badges/firstGame.svelte";
+
+  import ClickerImage from "$lib/assets/stanley/clicker.jpg";
 </script>
 
-<GameSlide bgUrl="$lib/assets/stanley/clicker.jpg" gameName="ByteClicker">
+<GameSlide bgUrl={ClickerImage} gameName="ByteClicker">
   {#snippet centerHeader()}
     <DoorShootable></DoorShootable>
     <SupportsTeams></SupportsTeams>

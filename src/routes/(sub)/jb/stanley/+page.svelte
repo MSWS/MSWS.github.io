@@ -1,35 +1,18 @@
 <script lang="ts">
   import stanley from "$lib/assets/stanley/stanley.jpg";
-  import ClimbPhoto from "$lib/assets/stanley/climb.jpg";
   import ByteClicker from "./games/byteClicker.svelte";
   import Climb from "./games/climb.svelte";
   import DodgeCourse from "./games/dodgeCourse.svelte";
-  import GameSlide from "./gameSlide.svelte";
+  import HoleInTheWall from "./games/holeInTheWall.svelte";
 
-  // const games = [
-  //   "Byte Clicker",
-  //   "Climb",
-  //   "Dodge Course",
-  //   "Dropdown",
-  //   "Find the Difference",
-  //   "Hole in the Wall",
-  //   "Jeopardy!",
-  //   "Musical Chairs",
-  //   "Race",
-  //   "Reaction",
-  //   "Roulette",
-  //   "Stanley Says",
-  // ];
-
-  // const games = [ByteClicker, Climb, DodgeCourse];
   const games = {
     "Byte Clicker": ByteClicker,
     Climb: Climb,
     "Dodge Course": DodgeCourse,
+    "Hole in the Wall": HoleInTheWall,
   };
 
   let gameNames = Object.keys(games);
-  let gameValues = Object.values(games);
   let gameEntries = Object.entries(games);
   let activeSlide = 0;
 </script>
@@ -103,30 +86,35 @@
       <li>After a long time, everyone dies</li>
     </div>
   </ul>
-  <div class="p-4 flex flex-row space-x-4">
-    <div>
-      <p class="text-3xl font-bold tracking-wider">GAMES</p>
-      <ul class="list-inside list-disc whitespace-nowrap">
-        {#each gameNames as name, index}
-          <a
-            on:click={() => {
-              activeSlide = index;
-            }}
-          >
+  <div class="bg-gray-300">
+    <div class="p-4 flex flex-row space-x-4" id="games">
+      <div>
+        <p class="text-3xl font-bold tracking-wider">GAMES</p>
+        <ul class="list-inside list-disc whitespace-nowrap">
+          {#each gameNames as name, index}
             <li
-              class="hover:bg-gray-200 rounded-l-full transition-colors {activeSlide ==
-              index
-                ? 'bg-gray-200'
-                : ''}"
+              class="hover:bg-gray-200 rounded-l-full transition-colors
+            {activeSlide == index ? 'bg-gray-200' : ''}"
             >
-              {name}
+              <button
+                class="w-full text-left cursor-pointer"
+                on:click={() => {
+                  activeSlide = index;
+                }}
+              >
+                {name}
+              </button>
             </li>
-          </a>
-        {/each}
-      </ul>
+          {/each}
+        </ul>
+      </div>
+      <div class="w-full">
+        <svelte:component this={gameEntries[activeSlide][1]}></svelte:component>
+      </div>
     </div>
-    <div class="w-full">
-      <svelte:component this={gameEntries[activeSlide][1]}></svelte:component>
+    <div class="p-4 space-x-4" id="secrets">
+      <p class="text-3xl font-bold tracking-wider text-right">SECRETS</p>
+      asdf
     </div>
   </div>
 </div>

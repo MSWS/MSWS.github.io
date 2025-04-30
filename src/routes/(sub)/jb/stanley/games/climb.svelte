@@ -1,9 +1,15 @@
 <script>
+  import DamagesPlayers from "../../badges/damagesPlayers.svelte";
+  import FirstGame from "../../badges/firstGame.svelte";
   import GameSlide from "../gameSlide.svelte";
+  import ClimbPhoto from "$lib/assets/stanley/climb.jpg";
 </script>
 
-<GameSlide bgUrl="$lib/assets/stanley/dodgecourse.jpg" gameName="Dodge Course">
-  {#snippet centerHeader()}{/snippet}
+<GameSlide bgUrl={ClimbPhoto} gameName="Climb">
+  {#snippet centerHeader()}
+    <FirstGame></FirstGame>
+    <DamagesPlayers></DamagesPlayers>
+  {/snippet}
   {#snippet description()}
     Stanley was never a huge fan of cardio, but let's put him through this just
     for the heck of it. This climb features a gallant view of our pristine
