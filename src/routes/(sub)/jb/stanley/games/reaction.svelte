@@ -1,7 +1,7 @@
 <script>
   import GameSlide from "../gameSlide.svelte";
   import ReactionPhoto from "$lib/assets/stanley/reaction.jpg";
-  import DamagesPlayers from "../../badges/damagesPlayers.svelte";
+  import DamagesPlayers from "../../badges/killsPlayers.svelte";
 </script>
 
 <GameSlide bgUrl={ReactionPhoto} gameName="Reaction">

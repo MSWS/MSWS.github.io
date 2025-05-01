@@ -1,5 +1,5 @@
 <script>
-  import DamagesPlayers from "../../badges/damagesPlayers.svelte";
+  import DamagesPlayers from "../../badges/killsPlayers.svelte";
   import FirstGame from "../../badges/firstGame.svelte";
   import RequiresHp from "../../badges/requiresHp.svelte";
   import GameSlide from "../gameSlide.svelte";

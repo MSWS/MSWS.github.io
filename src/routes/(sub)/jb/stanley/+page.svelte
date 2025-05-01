@@ -6,6 +6,7 @@
   import Dropdown from "./games/dropdown.svelte";
   import HoleInTheWall from "./games/holeInTheWall.svelte";
   import Jeopardy from "./games/jeopardy.svelte";
+  import MusicalChairs from "./games/musicalChairs.svelte";
   import Race from "./games/race.svelte";
   import Reaction from "./games/reaction.svelte";
 
@@ -18,6 +19,7 @@
     Race: Race,
     Dropdown: Dropdown,
     Reaction: Reaction,
+    "Musical Chairs": MusicalChairs,
   };
 
   let gameNames = Object.keys(games);

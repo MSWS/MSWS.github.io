@@ -4,7 +4,7 @@
 
 <BaseBadge
   faType="fa-solid"
-  faEmote="fa-triangle-exclamation"
-  desc="Damages Players"
-  style="text-yellow-300/80"
+  faEmote="fa-skull-crossbones"
+  desc="Kills Players"
+  style="text-orange-300/80"
 ></BaseBadge>

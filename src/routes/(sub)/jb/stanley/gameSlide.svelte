@@ -29,7 +29,7 @@
   <div
     class="text-xl lg:text-2xl h-full text-justify bg-white/10 backdrop-blur-xs m-2 p-2 text-shadow-sm rounded-md"
   >
-    <div class="flex flex-col md:flex-row gap-4">
+    <div class="flex flex-col md:flex-row gap-4 h-full">
       <p class="md:w-1/2">
         {@render description?.()}
       </p>
@@ -37,7 +37,7 @@
         <span class="md:hidden text-3xl bg-black/20 p-2">How to Play</span>
         {@render instructions?.()}
         {#if wardenScript}
-          <div class="flex flex-col items-end">
+          <div class="flex flex-col mt-auto">
             <span
               class="w-full bg-black/10 md:bg-transparent text-3xl text-right"
               >Warden Script</span

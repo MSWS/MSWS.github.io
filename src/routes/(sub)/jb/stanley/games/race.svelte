@@ -1,5 +1,5 @@
 <script>
-  import DamagesPlayers from "../../badges/damagesPlayers.svelte";
+  import DamagesPlayers from "../../badges/killsPlayers.svelte";
   import FirstGame from "../../badges/firstGame.svelte";
   import GameSlide from "../gameSlide.svelte";
   import RacePhoto from "$lib/assets/stanley/race.jpg";

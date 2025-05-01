@@ -2,7 +2,7 @@
   import FirstGame from "../../badges/firstGame.svelte";
   import GameSlide from "../gameSlide.svelte";
   import JeopardyPhoto from "$lib/assets/stanley/jeopardy.jpg";
-  import DamagesPlayers from "../../badges/damagesPlayers.svelte";
+  import DamagesPlayers from "../../badges/killsPlayers.svelte";
 </script>
 
 <GameSlide bgUrl={JeopardyPhoto} gameName="Dropdown">

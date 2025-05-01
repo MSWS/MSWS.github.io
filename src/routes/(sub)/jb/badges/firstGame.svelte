@@ -6,5 +6,5 @@
   faType="fa-solid"
   faEmote="fa-circle-play"
   desc="Can be played first"
-  style="text-green-950"
+  style="text-green-700"
 ></BaseBadge>

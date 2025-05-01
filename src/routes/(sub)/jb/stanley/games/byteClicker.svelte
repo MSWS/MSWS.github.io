@@ -1,6 +1,5 @@
 <script>
   import GameSlide from "../gameSlide.svelte";
-  import DoorShootable from "../../badges/doorShootable.svelte";
   import SupportsTeams from "../../badges/supportsTeams.svelte";
   import FirstGame from "../../badges/firstGame.svelte";
 
@@ -9,7 +8,6 @@
 
 <GameSlide bgUrl={ClickerImage} gameName="ByteClicker">
   {#snippet centerHeader()}
-    <DoorShootable></DoorShootable>
     <SupportsTeams></SupportsTeams>
     <FirstGame></FirstGame>
   {/snippet}
