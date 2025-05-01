@@ -3,6 +3,7 @@
   import ByteClicker from "./games/byteClicker.svelte";
   import Climb from "./games/climb.svelte";
   import DodgeCourse from "./games/dodgeCourse.svelte";
+  import Dropdown from "./games/dropdown.svelte";
   import HoleInTheWall from "./games/holeInTheWall.svelte";
   import Jeopardy from "./games/jeopardy.svelte";
   import Race from "./games/race.svelte";
@@ -14,6 +15,7 @@
     "Hole in the Wall": HoleInTheWall,
     "Jeopardy!": Jeopardy,
     Race: Race,
+    Dropdown: Dropdown,
   };
 
   let gameNames = Object.keys(games);

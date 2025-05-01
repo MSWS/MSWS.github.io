@@ -1,6 +1,4 @@
 <script>
-  import { json } from "@sveltejs/kit";
-
   let {
     bgUrl,
     description,
@@ -29,7 +27,7 @@
     >
   </div>
   <div
-    class="text-xl h-full text-justify bg-white/10 backdrop-blur-xs m-2 p-2 text-shadow-sm rounded-md"
+    class="text-xl lg:text-2xl h-full text-justify bg-white/10 backdrop-blur-xs m-2 p-2 text-shadow-sm rounded-md"
   >
     <div class="flex flex-col md:flex-row gap-4">
       <p class="md:w-1/2">
