@@ -15,14 +15,18 @@
   class="flex flex-col bg-cover bg-center h-full w-full p-4"
   style="background-image: url({bgUrl});"
 >
-  <div class="flex text-4xl bg-black/20 p-4 w-full">
-    <span class="w-1/2 md:w-1/3">
+  <div class="flex text-4xl bg-black/20 p-4 w-full place-items-center">
+    <span class="w-full sm:w-1/2 md:w-1/3">
       {gameName}
     </span>
-    <span class="text-right md:text-center w-1/2 md:w-1/3">
+    <span
+      class="flex md:text-center w-full sm:w-1/2 md:w-1/3 place-content-end md:place-content-center"
+    >
       {@render centerHeader?.()}
     </span>
-    <span class="hidden md:block text-right w-1/3">How to Play</span>
+    <span class="hidden md:flex text-right w-1/3 place-content-end"
+      >How to Play</span
+    >
   </div>
   <div
     class="text-xl h-full text-justify bg-white/10 backdrop-blur-xs m-2 p-2 text-shadow-sm rounded-md"

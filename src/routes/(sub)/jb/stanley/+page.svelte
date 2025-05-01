@@ -90,7 +90,7 @@
       <li>After a long time, everyone dies</li>
     </div>
   </ul>
-  <div class="bg-gray-300">
+  <div class="bg-gray-200">
     <div class="p-4 flex flex-row space-x-4" id="games">
       <div>
         <p class="text-3xl font-bold tracking-wider">GAMES</p>
