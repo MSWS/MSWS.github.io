@@ -1,12 +1,14 @@
 <script>
   import GameSlide from "../gameSlide.svelte";
   import ReactionPhoto from "$lib/assets/stanley/reaction.jpg";
-  import DamagesPlayers from "../../badges/killsPlayers.svelte";
+  import KillsPlayers from "../../badges/killsPlayers.svelte";
+  import FirstGame from "../../badges/firstGame.svelte";
 </script>
 
 <GameSlide bgUrl={ReactionPhoto} gameName="Reaction">
   {#snippet centerHeader()}
-    <DamagesPlayers></DamagesPlayers>
+    <KillsPlayers></KillsPlayers>
+    <FirstGame></FirstGame>
   {/snippet}
   {#snippet description()}
     I've always though you could use a friend Stanley, office workers aside. You

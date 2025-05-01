@@ -4,7 +4,7 @@
     description,
     instructions,
     gameName,
-    centerHeader,
+    centerHeader = undefined,
     wardenScript = undefined,
   } = $props();
 </script>

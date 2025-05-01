@@ -23,7 +23,6 @@
       <li>Shoot a question that a prisoner wants</li>
       <li class="text-red-500">Speak the answer to the question</li>
       <li>Click 'Start Timer' to allow prisoners to buzz in</li>
-      <li>Prisoners may buzz in if they know the question</li>
       <li>If buzzed in, click correct or incorrect based on answer</li>
       <li>Repeat to desired limit</li>
     </ol>

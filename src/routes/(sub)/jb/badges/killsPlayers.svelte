@@ -6,5 +6,5 @@
   faType="fa-solid"
   faEmote="fa-skull-crossbones"
   desc="Kills Players"
-  style="text-orange-300/80"
+  style="text-red-400/80"
 ></BaseBadge>

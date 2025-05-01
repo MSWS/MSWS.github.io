@@ -4,11 +4,14 @@
   import Climb from "./games/climb.svelte";
   import DodgeCourse from "./games/dodgeCourse.svelte";
   import Dropdown from "./games/dropdown.svelte";
+  import FindTheDifference from "./games/findTheDifference.svelte";
   import HoleInTheWall from "./games/holeInTheWall.svelte";
   import Jeopardy from "./games/jeopardy.svelte";
   import MusicalChairs from "./games/musicalChairs.svelte";
   import Race from "./games/race.svelte";
   import Reaction from "./games/reaction.svelte";
+  import Roulette from "./games/roulette.svelte";
+  import StanleySays from "./games/stanleySays.svelte";
 
   const games = {
     "Byte Clicker": ByteClicker,
@@ -20,6 +23,9 @@
     Dropdown: Dropdown,
     Reaction: Reaction,
     "Musical Chairs": MusicalChairs,
+    "Find the Difference": FindTheDifference,
+    "Stanley Says": StanleySays,
+    Roulette: Roulette,
   };
 
   let gameNames = Object.keys(games);
