@@ -7,6 +7,7 @@
   import HoleInTheWall from "./games/holeInTheWall.svelte";
   import Jeopardy from "./games/jeopardy.svelte";
   import Race from "./games/race.svelte";
+  import Reaction from "./games/reaction.svelte";
 
   const games = {
     "Byte Clicker": ByteClicker,
@@ -16,6 +17,7 @@
     "Jeopardy!": Jeopardy,
     Race: Race,
     Dropdown: Dropdown,
+    Reaction: Reaction,
   };
 
   let gameNames = Object.keys(games);
@@ -99,8 +101,8 @@
         <ul class="list-inside list-disc whitespace-nowrap">
           {#each gameNames as name, index}
             <li
-              class="hover:bg-gray-200 rounded-l-full transition-colors
-            {activeSlide == index ? 'bg-gray-200' : ''}"
+              class="hover:bg-gray-300/80 rounded-l-full transition-colors
+            {activeSlide == index ? 'bg-gray-300' : ''}"
             >
               <button
                 class="w-full text-left cursor-pointer"
