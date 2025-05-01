@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="flex w-screen min-h-max flex-col md:flex-row bg-gray-300 justify-center-safe"
+  class="flex flex-col pt-4 md:pt-0 md:flex-row bg-gray-300 justify-center-safe"
 >
   <div class="flex flex-col items-center justify-center">
     <div class="flex rounded-tr-4xl rounded-bl-4xl bg-amber-50 p-4 size-fit">

@@ -4,12 +4,16 @@
   import Climb from "./games/climb.svelte";
   import DodgeCourse from "./games/dodgeCourse.svelte";
   import HoleInTheWall from "./games/holeInTheWall.svelte";
+  import Jeopardy from "./games/jeopardy.svelte";
+  import Race from "./games/race.svelte";
 
   const games = {
     "Byte Clicker": ByteClicker,
     Climb: Climb,
     "Dodge Course": DodgeCourse,
     "Hole in the Wall": HoleInTheWall,
+    "Jeopardy!": Jeopardy,
+    Race: Race,
   };
 
   let gameNames = Object.keys(games);
