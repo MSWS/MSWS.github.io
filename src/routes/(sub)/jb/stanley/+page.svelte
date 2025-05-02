@@ -1,5 +1,6 @@
 <script lang="ts">
   import stanley from "$lib/assets/stanley/stanley.jpg";
+  import { onMount, tick } from "svelte";
   import ByteClicker from "./games/byteClicker.svelte";
   import Climb from "./games/climb.svelte";
   import DodgeCourse from "./games/dodgeCourse.svelte";
@@ -12,6 +13,8 @@
   import Reaction from "./games/reaction.svelte";
   import Roulette from "./games/roulette.svelte";
   import StanleySays from "./games/stanleySays.svelte";
+  import Transitioner from "./transitioner.svelte";
+  import { replaceState } from "$app/navigation";
 
   const games = {
     "Byte Clicker": ByteClicker,
@@ -28,10 +31,57 @@
     Roulette: Roulette,
   };
 
+  const SLIDESHOW_INTERVAL = 10000;
+  const TRANSITION_DURATION = 1000;
+
   let gameNames = Object.keys(games);
   let gameEntries = Object.entries(games);
   let activeSlide = 0;
+  let game: string | null = "default";
+  let idle = true;
+  let transitioning = false;
+
+  const images = import.meta.glob("$lib/assets/stanley/*.jpg", {
+    eager: true,
+    import: "default",
+  });
+
+  const photoPaths = Object.values(images) as string[];
+
+  onMount(() => {
+    game = new URLSearchParams(window.location.search).get("game");
+    if (game) {
+      idle = false;
+      activeSlide = gameNames.indexOf(game);
+    }
+    function preloadImage(url: string): Promise<void> {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve();
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+    for (const url of photoPaths) {
+      preloadImage(url);
+    }
+  });
+
+  let slideshowTask = setInterval(() => {
+    if (!idle) {
+      clearInterval(slideshowTask);
+      return;
+    }
+
+    activeSlide = ++activeSlide % gameNames.length;
+  }, SLIDESHOW_INTERVAL);
 </script>
+
+<svelte:head>
+  {#each photoPaths as photo}
+    <link rel="preload" as="image" href={photo} />
+  {/each}
+</svelte:head>
 
 <div class="font-stanley text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
   <ul
@@ -103,19 +153,25 @@
     </div>
   </ul>
   <div class="bg-gray-200">
-    <div class="p-4 flex flex-row space-x-4" id="games">
+    <div class="p-4 flex flex-col md:flex-row space-x-4" id="games">
       <div>
         <p class="text-3xl font-bold tracking-wider">GAMES</p>
-        <ul class="list-inside list-disc whitespace-nowrap">
+        <ul
+          class="grid grid-cols-2 sm:grid-cols-3 list-inside md:inline md:w-fit md:list-disc whitespace-nowrap"
+        >
           {#each gameNames as name, index}
             <li
-              class="hover:bg-gray-300/80 rounded-l-full transition-colors
-            {activeSlide == index ? 'bg-gray-300' : ''}"
+              class="hover:bg-gray-300/80 md:rounded-l-full transition-colors {activeSlide ==
+              index
+                ? 'bg-white text-red-500 tracking-wide'
+                : 'hover:bg-gray-300'}"
             >
               <button
-                class="w-full text-left cursor-pointer"
+                class="w-full text-center md:text-left cursor-pointer"
                 on:click={() => {
+                  idle = false;
                   activeSlide = index;
+                  replaceState("?game=" + name, {});
                 }}
               >
                 {name}
@@ -124,13 +180,13 @@
           {/each}
         </ul>
       </div>
-      <div class="w-full">
+      <div class="relative w-full">
         <svelte:component this={gameEntries[activeSlide][1]}></svelte:component>
       </div>
     </div>
-    <div class="p-4 space-x-4" id="secrets">
-      <p class="text-3xl font-bold tracking-wider text-right">SECRETS</p>
-      asdf
+    <div class="relative m-4 space-x-4 text-right" id="secrets">
+      <p class="text-3xl font-bold tracking-wider">SECRETS</p>
+      Would you really call it secret a secret if everyone knew about it?
     </div>
   </div>
 </div>
