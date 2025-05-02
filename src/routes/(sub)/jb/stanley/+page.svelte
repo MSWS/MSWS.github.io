@@ -114,7 +114,7 @@
       <li>Teeter on the edge of brilliance</li>
     </div>
     <div
-      class="row-span-11 max-w-fit h-full md:col-span-2 text-wrap text-lg text-justify tracking-wide m-4 mr-8"
+      class="row-span-11 max-w-fit h-full md:col-span-2 text-wrap text-lg text-justify tracking-wide m-4 md:mr-8"
     >
       <div class="text-center text-3xl font-bold">JB_STANLEY</div>
       <span>Inspired by&nbsp;</span><a
