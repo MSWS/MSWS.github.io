@@ -20,26 +20,25 @@
     "Byte Clicker": ByteClicker,
     Climb: Climb,
     "Dodge Course": DodgeCourse,
+    Dropdown: Dropdown,
+    "Find the Difference": FindTheDifference,
     "Hole in the Wall": HoleInTheWall,
     "Jeopardy!": Jeopardy,
-    Race: Race,
-    Dropdown: Dropdown,
-    Reaction: Reaction,
     "Musical Chairs": MusicalChairs,
-    "Find the Difference": FindTheDifference,
-    "Stanley Says": StanleySays,
+    Race: Race,
+    Reaction: Reaction,
     Roulette: Roulette,
+    "Stanley Says": StanleySays,
   };
 
   const SLIDESHOW_INTERVAL = 10000;
-  const TRANSITION_DURATION = 1000;
 
   let gameNames = Object.keys(games);
   let gameEntries = Object.entries(games);
   let activeSlide = 0;
   let game: string | null = "default";
+  let animating = false;
   let idle = true;
-  let transitioning = false;
 
   const images = import.meta.glob("$lib/assets/stanley/*.jpg", {
     eager: true,
@@ -153,9 +152,9 @@
     </div>
   </ul>
   <div class="bg-gray-200">
-    <div class="p-4 flex flex-col md:flex-row space-x-4" id="games">
+    <div class="relative p-4 flex flex-col md:flex-row space-x-4" id="games">
       <div>
-        <p class="text-3xl font-bold tracking-wider">GAMES</p>
+        <a class="text-3xl font-bold tracking-wider" href="#games">GAMES</a>
         <ul
           class="grid grid-cols-2 sm:grid-cols-3 list-inside md:inline md:w-fit md:list-disc whitespace-nowrap"
         >
@@ -181,7 +180,13 @@
         </ul>
       </div>
       <div class="relative w-full">
-        <svelte:component this={gameEntries[activeSlide][1]}></svelte:component>
+        {#if animating}
+          <svelte:component this={gameEntries[activeSlide][1]}
+          ></svelte:component>
+        {:else}
+          <svelte:component this={gameEntries[activeSlide][1]}
+          ></svelte:component>
+        {/if}
       </div>
     </div>
     <div class="relative m-4 space-x-4 text-right" id="secrets">
