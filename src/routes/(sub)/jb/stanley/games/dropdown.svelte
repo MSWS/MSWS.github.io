@@ -1,11 +1,11 @@
 <script>
   import FirstGame from "../../badges/firstGame.svelte";
   import GameSlide from "../gameSlide.svelte";
-  import JeopardyPhoto from "$lib/assets/stanley/jeopardy.jpg";
+  import DropdownPhoto from "$lib/assets/stanley/dropdown.jpg";
   import DamagesPlayers from "../../badges/killsPlayers.svelte";
 </script>
 
-<GameSlide bgUrl={JeopardyPhoto} gameName="Dropdown">
+<GameSlide bgUrl={DropdownPhoto} gameName="Dropdown">
   {#snippet centerHeader()}
     <DamagesPlayers></DamagesPlayers>
   {/snippet}

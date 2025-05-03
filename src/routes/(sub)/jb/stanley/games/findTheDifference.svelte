@@ -1,7 +1,7 @@
 <script>
   import FirstGame from "../../badges/firstGame.svelte";
   import GameSlide from "../gameSlide.svelte";
-  import FTDPhoto from "$lib/assets/stanley/findTheDifference.jpg";
+  import FTDPhoto from "$lib/assets/stanley/ftd.jpg";
   import SupportsTeams from "../../badges/supportsTeams.svelte";
 </script>
 

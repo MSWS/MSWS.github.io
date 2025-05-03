@@ -4,7 +4,7 @@
   import RequiresHp from "../../badges/requiresHp.svelte";
   import GameSlide from "../gameSlide.svelte";
 
-  import DodgeCourseImage from "$lib/assets/stanley/musicalchairs.jpg";
+  import DodgeCourseImage from "$lib/assets/stanley/dodgecourse.jpg";
 </script>
 
 <GameSlide bgUrl={DodgeCourseImage} gameName="Dodge Course">
