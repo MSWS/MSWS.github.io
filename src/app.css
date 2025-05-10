@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: pixel;
+  font-display: swap;
+  src: url('$lib/assets/fonts/Dragon.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
 
 @theme {
   --color-csorange: #E17F0E;
   --font-stanley: 'League Gothic', sans-serif;
+  --font-pixel: 'pixel', sans-serif;
 }

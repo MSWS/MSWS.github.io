@@ -13,8 +13,8 @@
   import Reaction from "./games/reaction.svelte";
   import Roulette from "./games/roulette.svelte";
   import StanleySays from "./games/stanleySays.svelte";
-  import Transitioner from "./transitioner.svelte";
   import { replaceState } from "$app/navigation";
+  import Navbar from "../../../navbar.svelte";
 
   const games = {
     "Byte Clicker": ByteClicker,
@@ -82,6 +82,8 @@
   {/each}
 </svelte:head>
 
+<Navbar></Navbar>
+
 <div class="font-stanley text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
   <ul
     class="grid w-full font-stanley text-nowrap grid-flow-row md:grid-flow-col md:grid-cols-6 p-8 ml-auto mr-auto text-center md:text-left md:list-disc"
@@ -115,7 +117,14 @@
     <div
       class="row-span-11 max-w-fit h-full md:col-span-2 text-wrap text-lg text-justify tracking-wide m-4 md:mr-8"
     >
-      <div class="text-center text-3xl font-bold">JB_STANLEY</div>
+      <div class="text-center text-3xl font-bold">
+        <a
+          href="https://steamcommunity.com/sharedfiles/filedetails/?id=3398732836"
+          class="text-blue-900 hover:text-blue-500"
+        >
+          JB_STANLEY
+        </a>
+      </div>
       <span>Inspired by&nbsp;</span><a
         href="https://www.stanleyparable.com/"
         class="underline text-blue-950">The Stanley Parable</a
