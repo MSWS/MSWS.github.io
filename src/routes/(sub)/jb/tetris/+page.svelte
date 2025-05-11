@@ -45,13 +45,13 @@
   <img src={GamesSVG} class="h-20 ml-auto m-2" alt="Games" />
 
   <div
-    class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row bg-cyan-900/20 p-2 divide-zinc-600 divide-x-8"
+    class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row bg-cyan-900/20 p-2"
   >
     <TetrisGameEntry name="HNS">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <RequiresHp></RequiresHp>
         <SupportsTeams></SupportsTeams>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
 
@@ -112,15 +112,15 @@
 
     <TetrisGameEntry name="Territory">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <SupportsTeams></SupportsTeams>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
 
     <TetrisGameEntry name="Dodge It">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <RequiresHp></RequiresHp>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
 
@@ -161,10 +161,10 @@
       {#snippet emotes()}{/snippet}
     </TetrisGameEntry>
 
-    <TetrisGameEntry name="Dodge Course">
+    <TetrisGameEntry name="Course">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <RequiresHp></RequiresHp>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
   </div>
