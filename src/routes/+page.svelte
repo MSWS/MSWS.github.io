@@ -133,7 +133,7 @@
               >.
             </p>
           </div>
-          <div class="flex-col w-full space-y-2 m-4">
+          <div class="flex-col w-full gap-y-2 m-4">
             <div class="flex">
               <div class="self-center text-center">
                 <a

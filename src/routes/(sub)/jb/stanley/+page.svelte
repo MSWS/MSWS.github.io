@@ -161,7 +161,7 @@
     </div>
   </ul>
   <div class="bg-gray-200">
-    <div class="relative p-4 flex flex-col md:flex-row space-x-4" id="games">
+    <div class="relative p-4 flex flex-col md:flex-row gap-x-4" id="games">
       <div>
         <a class="text-3xl font-bold tracking-wider" href="#games">GAMES</a>
         <ul
@@ -198,7 +198,7 @@
         {/if}
       </div>
     </div>
-    <div class="relative m-4 space-x-4 text-right" id="secrets">
+    <div class="relative m-4 gap-x-4 text-right" id="secrets">
       <p class="text-3xl font-bold tracking-wider">SECRETS</p>
       Would you really call it secret a secret if everyone knew about it?
     </div>
