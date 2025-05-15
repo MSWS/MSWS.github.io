@@ -1,7 +1,7 @@
 <script lang="ts">
   import TetrisSVG from "$lib/assets/tetris/tetris.svg";
   import GamesSVG from "$lib/assets/tetris/games.svg";
-  import Navbar from "../../../navbar.svelte";
+  import Navbar from "../../navbar.svelte";
 
   import Tetris1JPG from "$lib/assets/tetris/tetris1.jpg";
   import Tetris2JPG from "$lib/assets/tetris/tetris2.jpg";

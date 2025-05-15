@@ -14,7 +14,7 @@
   import Roulette from "./games/roulette.svelte";
   import StanleySays from "./games/stanleySays.svelte";
   import { replaceState } from "$app/navigation";
-  import Navbar from "../../../navbar.svelte";
+  import Navbar from "../../navbar.svelte";
 
   const games = {
     "Byte Clicker": ByteClicker,

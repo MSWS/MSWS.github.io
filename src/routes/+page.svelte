@@ -226,7 +226,7 @@
         <img
           src={gitea}
           alt="Gitea Logo"
-          class="h-16 flex self-center items-center content-center justify-center mr-2 object-scale-down
+          class="size-16 flex self-center items-center content-center justify-center mr-2
         hover:scale-110"
         /></a
       >
