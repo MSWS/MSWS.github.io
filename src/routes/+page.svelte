@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="flex flex-col pt-4 md:pt-0 md:flex-row bg-gray-300 justify-center-safe"
+  class="flex flex-col pt-4 md:pt-0 md:flex-row bg-gray-300 justify-center-safe gap-x-4"
 >
   <div class="flex flex-col items-center justify-center">
     <div class="flex rounded-tr-4xl rounded-bl-4xl bg-amber-50 p-4 size-fit">
@@ -22,7 +22,7 @@
         </div>
         <br class="sm:invisible" />
         <span class="text-sm">a.k.a Isaac</span>
-        <div class="flex-row flex text-sm space-x-1">
+        <div class="flex-row flex text-sm gap-x-1">
           <div class="flex-col">
             <div>
               <i class="fa-regular fa-envelope"></i>
@@ -42,7 +42,7 @@
     </div>
 
     <div
-      class="flex flex-row space-x-2 md:space-x-4 rounded-xl p-2 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
+      class="flex flex-row gap-x-2 md:gap-x-4 rounded-xl p-2 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
         href="https://msws.xyz/s/yt"
