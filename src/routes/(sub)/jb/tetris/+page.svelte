@@ -3,13 +3,22 @@
   import GamesSVG from "$lib/assets/tetris/games.svg";
   import Navbar from "../../../navbar.svelte";
 
-  import TetrisJPG from "$lib/assets/tetris/tetris.jpg";
+  import Tetris1JPG from "$lib/assets/tetris/tetris1.jpg";
+  import Tetris2JPG from "$lib/assets/tetris/tetris2.jpg";
+  import Tetris3JPG from "$lib/assets/tetris/tetris3.jpg";
+  import Tetris4JPG from "$lib/assets/tetris/tetris4.jpg";
   import FirstGame from "../badges/firstGame.svelte";
   import SupportsTeams from "../badges/supportsTeams.svelte";
   import RequiresHp from "../badges/requiresHp.svelte";
   import KillsPlayers from "../badges/killsPlayers.svelte";
   import TetrisGameEntry from "./tetrisGameEntry.svelte";
 </script>
+
+<svelte:head>
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+  ></script>
+</svelte:head>
 
 <div class="p-3 font-pixel text-2xl">
   <div class="ml-2 md:ml-0">
@@ -24,11 +33,45 @@
     </Navbar>
   </div>
 
-  <img
-    src={TetrisJPG}
-    class="w-full max-h-200 bg-cover bg-center p-1 rounded-3xl"
-    alt="jb_tetris"
-  />
+  <swiper-container
+    navigation="true"
+    autoplay-delay="4000"
+    effect="coverflow"
+    grab-cursor="true"
+    coverflow-effect-rotate="25"
+    coverflow-effect-slide-shadows="true"
+    keyboard="true"
+    loop="true"
+  >
+    <swiper-slide>
+      <img
+        src={Tetris1JPG}
+        class="w-full max-h-200 bg-cover bg-center p-1 rounded-3xl"
+        alt="jb_tetris"
+      />
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        src={Tetris2JPG}
+        class="w-full max-h-200 bg-cover bg-center p-1 rounded-3xl"
+        alt="jb_tetris"
+      />
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        src={Tetris3JPG}
+        class="w-full max-h-200 bg-cover bg-center p-1 rounded-3xl"
+        alt="jb_tetris"
+      />
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        src={Tetris4JPG}
+        class="w-full max-h-200 bg-cover bg-center p-1 rounded-3xl"
+        alt="jb_tetris"
+      />
+    </swiper-slide>
+  </swiper-container>
 
   <div class="bg-cyan-200/80 rounded-lg p-2 text-justify md:tracking-wide">
     Enter the world of
@@ -42,7 +85,8 @@
     healthy balance for <span title="because there are two">both teams</span>.
   </div>
 
-  <img src={GamesSVG} class="h-20 ml-auto m-2" alt="Games" />
+  <!-- <img src={GamesSVG} class="h-20 m-2" alt="Games" /> -->
+  <img src={GamesSVG} class="h-20 m-2" alt="Games" />
 
   <div
     class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-flow-row bg-cyan-900/20 p-2"
@@ -93,8 +137,8 @@
 
     <TetrisGameEntry name="Colors">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <KillsPlayers></KillsPlayers>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
 
@@ -152,8 +196,8 @@
 
     <TetrisGameEntry name="Jump Rope">
       {#snippet emotes()}
-        <FirstGame></FirstGame>
         <RequiresHp></RequiresHp>
+        <FirstGame></FirstGame>
       {/snippet}
     </TetrisGameEntry>
 
