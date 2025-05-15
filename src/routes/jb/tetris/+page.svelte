@@ -42,6 +42,7 @@
     coverflow-effect-slide-shadows="true"
     keyboard="true"
     loop="true"
+    speed=1000
   >
     <swiper-slide>
       <img
