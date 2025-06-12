@@ -39,7 +39,6 @@
     effect="coverflow"
     grab-cursor="true"
     coverflow-effect-rotate="25"
-    coverflow-effect-slide-shadows="true"
     keyboard="true"
     loop="true"
     speed=1000
