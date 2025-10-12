@@ -45,6 +45,16 @@
       class="flex flex-row gap-x-2 md:gap-x-4 rounded-xl p-2 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
+        href="https://msws.xyz/s/github"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        <i
+          class="fa-brands fa-github text-5xl hover:scale-110 transition-transform"
+        ></i>
+      </a>
+      <a
         href="https://msws.xyz/s/yt"
         target="_blank"
         rel="noopener noreferrer"
@@ -81,16 +91,6 @@
         />
       </a>
       <a
-        href="https://msws.xyz/s/github"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-      >
-        <i
-          class="fa-brands fa-github text-5xl hover:scale-110 transition-transform"
-        ></i>
-      </a>
-      <a
         href="https://msws.xyz/s/donate"
         target="_blank"
         rel="noopener noreferrer"
@@ -109,6 +109,34 @@
     class="flex flex-col overflow-y-auto h-fit md:h-screen content-center-safe place-content-center-safe gap-y-3"
   >
     <div>
+      <div class="flex flex-row p-2">
+        <div class="bg-csblue mr-2 w-2"></div>
+        <div class="flex w-full">
+          <div>
+            <p class="text-2xl font-semibold">
+              <i class="fa-solid fa-masks-theater text-csblue"></i> Trouble in Terrorist
+              Town
+            </p>
+            <p class="lg:whitespace-nowrap">
+              A Counter-Strike 2 gamemode with innocents, traitors, and
+              detectives.
+            </p>
+          </div>
+          <div class="flex flex-col w-full justify-center-safe">
+            <div class="flex justify-center-safe items-center">
+              <a
+                href="https://github.com/edgegamers/Jailbreak"
+                class="font-bold text-blue-800 group hover:text-blue-700 transition-transform whitespace-nowrap"
+              >
+                <i
+                  class="fa-brands fa-github text-lg group-hover:scale-110 transition-transform align-baseline"
+                ></i>
+                TTT</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="flex p-2 justify-end">
         <div class="text-right">
           <p class="text-2xl font-semibold">
@@ -133,7 +161,7 @@
               >.
             </p>
           </div>
-          <div class="flex-col w-full gap-y-2 m-4">
+          <div class="flex-col w-full m-4">
             <div class="flex">
               <div class="self-center text-center">
                 <a
@@ -182,14 +210,14 @@
         </div>
         <div class="flex flex-row">
           <div
-            class="flex-col p-4 bg-csorange content-evenly font-bold text-center justify-around text-black/90 text-shadow-lg"
+            class="flex-col p-2 bg-csorange content-evenly font-bold text-center justify-around text-black/90 text-shadow-lg"
           >
             <div>M</div>
             <div>A</div>
             <div>P</div>
             <div>S</div>
           </div>
-          <div class="flex-col w-full h-64 md:h-96 lg:h-128">
+          <div class="flex-col w-full h-64 md:h-96">
             <div class="group h-1/2">
               <a href="/jb/stanley">
                 <div
