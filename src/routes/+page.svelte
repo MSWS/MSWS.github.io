@@ -125,7 +125,7 @@
           <div class="flex flex-col w-full justify-center-safe">
             <div class="flex justify-center-safe items-center">
               <a
-                href="https://github.com/edgegamers/Jailbreak"
+                href="https://github.com/MSWS/TTT"
                 class="font-bold text-blue-800 group hover:text-blue-700 transition-transform whitespace-nowrap"
               >
                 <i
