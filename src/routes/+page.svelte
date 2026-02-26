@@ -1,8 +1,89 @@
 <script lang="ts">
+  import { onMount, onDestroy } from "svelte";
   import logo from "$lib/assets/LOGO.png";
   import spigot from "$lib/assets/spigot.png";
   import coffee from "$lib/assets/bmc-logo.svg";
   import gitea from "$lib/assets/gitea.webp";
+
+  let hovered: null | number = $state(null);
+  let autoIndex = $state(0);
+  let intervalId: any = null;
+  let timeoutId: any = null;
+  let isMobile = $state(false);
+
+  function getClipPath(i: number) {
+    const first = i === 0;
+    const last = i === panels.length - 1;
+    const tl = first ? "0 0" : "80px 0";
+    const tr = "100% 0";
+    const br = last ? "100% 100%" : "calc(100% - 80px) 100%";
+    const bl = "0 100%";
+    return `polygon(${tl}, ${tr}, ${br}, ${bl})`;
+  }
+
+  const panels = [
+    {
+      href: "/jb/stanley",
+      bg: "https://images.steamusercontent.com/ugc/29936585588745712/E48DD198260691C1D56751F12D49C335BA7D0604/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+      label: "jb_stanley",
+      labelColor: "text-amber-200",
+      isLocal: true,
+    },
+    {
+      href: "/jb/tetris",
+      bg: "https://images.steamusercontent.com/ugc/29945053257212218/DAC345DD9E93FE89D3B95E6F3D5B337EF11445D8/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+      label: "jb_tetris",
+      labelColor: "text-red-300",
+      isLocal: false,
+    },
+    {
+      href: "/jb/panoptico",
+      bg: "https://files.local.msws.xyz/public/img/6aa4d98eeb915751.jpg?k=B6KAUX4P7ozhbFiF&cache",
+      label: "jb_panoptico_ms",
+      labelColor: "text-slate-300",
+      isLocal: false,
+    },
+  ];
+
+  // The active panel: manual hover wins on desktop, auto-cycle on mobile
+  const active = $derived(
+    hovered !== null ? hovered : isMobile ? autoIndex : null,
+  );
+
+  function startCycle() {
+    timeoutId = setTimeout(() => {
+      autoIndex = (autoIndex + 1) % panels.length;
+      intervalId = setInterval(() => {
+        autoIndex = (autoIndex + 1) % panels.length;
+      }, 5000);
+    }, 10000);
+  }
+
+  function stopCycle() {
+    clearTimeout(timeoutId);
+    clearInterval(intervalId);
+    timeoutId = null;
+    intervalId = null;
+  }
+
+  onMount(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    isMobile = mq.matches;
+
+    if (isMobile) startCycle();
+
+    mq.addEventListener("change", (e) => {
+      isMobile = e.matches;
+      if (isMobile) {
+        startCycle();
+      } else {
+        stopCycle();
+        autoIndex = 0;
+      }
+    });
+  });
+
+  onDestroy(() => stopCycle());
 </script>
 
 <div
@@ -146,7 +227,7 @@
             A Counter-Strike 2 gamemode involving prisoners, guards, and guns.
           </p>
         </div>
-        <div class="inline-flex bg-csorange ml-2 w-4"></div>
+        <div class="inline-flex bg-csorange ml-2 w-2"></div>
       </div>
 
       <div class="flex flex-col">
@@ -217,33 +298,40 @@
             <div>P</div>
             <div>S</div>
           </div>
-          <div class="flex-col w-full h-64 md:h-96">
-            <div class="group h-1/2">
-              <a href="/jb/stanley">
+
+          <div
+            class="flex w-full h-64 md:h-96 overflow-hidden shadow-2xl"
+          >
+            {#each panels as panel, i}
+              <a
+                href={panel.href}
+                class="relative transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] -mr-20 last:mr-0"
+                style:flex={active === i ? "3.5" : "1"}
+                style:clip-path={getClipPath(i)}
+                onmouseenter={() => (hovered = i)}
+                onmouseleave={() => (hovered = null)}
+              >
                 <div
-                  class="bg-[url('$lib/assets/stanley/stanley.jpg')] bg-cover bg-center size-full
-              hover:scale-y-105 hover:bg-blend-darken hover:bg-black/50 transition-all duration-200"
+                  class="size-full bg-cover bg-center transition-all duration-500"
+                  class:brightness-50={active === i}
+                  style:background-image={panel.isLocal
+                    ? `url('${panel.bg}')`
+                    : `url("${panel.bg}")`}
+                ></div>
+
+                <div
+                  class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none"
+                  class:opacity-0={active !== i}
+                  class:opacity-100={active === i}
                 >
                   <span
-                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-amber-200 font-bold text-2xl"
-                    >jb_stanley</span
+                    class="font-bold text-2xl drop-shadow-lg {panel.labelColor}"
                   >
+                    {panel.label}
+                  </span>
                 </div>
               </a>
-            </div>
-            <div class="group h-1/2">
-              <a href="/jb/tetris">
-                <div
-                  class="bg-[url('https://images.steamusercontent.com/ugc/29945053257212218/DAC345DD9E93FE89D3B95E6F3D5B337EF11445D8/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false')] bg-cover bg-position-[center_-4rem] size-full
-              hover:scale-y-105 hover:bg-blend-darken hover:bg-black/50 transition-all duration-200"
-                >
-                  <span
-                    class="flex size-full items-center justify-center opacity-0 group-hover:opacity-100 duration-200 text-red-300 font-bold text-2xl"
-                    >jb_tetris</span
-                  >
-                </div>
-              </a>
-            </div>
+            {/each}
           </div>
         </div>
       </div>
