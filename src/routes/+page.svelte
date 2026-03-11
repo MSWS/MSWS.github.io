@@ -38,7 +38,7 @@
     },
     {
       href: "/jb/panoptico",
-      bg: "https://files.local.msws.xyz/public/img/6aa4d98eeb915751.jpg?k=B6KAUX4P7ozhbFiF&cache",
+      bg: "https://files.msws.xyz/public/img/6aa4d98eeb915751.jpg?k=B6KAUX4P7ozhbFiF&cache",
       label: "jb_panoptico_ms",
       labelColor: "text-slate-300",
       isLocal: false,
