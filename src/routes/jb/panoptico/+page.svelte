@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount, onDestroy } from "svelte";
     import Navbar from "../../navbar.svelte";
     import PanopticoGameEntry from "./panopticoGameEntry.svelte";
     import FirstGame from "../badges/firstGame.svelte";
@@ -11,48 +12,68 @@
     import Panoptico3JPG from "$lib/assets/panoptico/panoptico3.jpg";
     import Panoptico4JPG from "$lib/assets/panoptico/panoptico4.jpg";
 
-    // Games positioned around the circle — order = clockwise from top
     const games: {
         name: string;
-        badges?: Array<
+        badges: Array<
             "firstGame" | "supportsTeams" | "requiresHp" | "killsPlayers"
         >;
     }[] = [
         { name: "Race", badges: ["firstGame"] },
         { name: "Strafe Race", badges: ["firstGame"] },
-        { name: "Long Jump", badges: ["firstGame"] },
+        { name: "Long Jump", badges: [] },
         { name: "BHop", badges: ["firstGame"] },
         { name: "Climb", badges: ["firstGame"] },
         { name: "Invis Climb", badges: ["firstGame"] },
-        { name: "Reverse Climb", badges: ["killsPlayers", "requiresHp"] },
+        { name: "Reverse Climb", badges: [] },
         { name: "Surf", badges: ["firstGame"] },
-        { name: "Dropdown", badges: ["firstGame"] },
-        { name: "Breakfloor", badges: ["killsPlayers"] },
+        { name: "Dropdown", badges: ["requiresHp", "firstGame"] },
+        { name: "Breakfloor", badges: ["requiresHp", "killsPlayers"] },
         { name: "Wipeout", badges: ["requiresHp", "killsPlayers"] },
-        { name: "Dodge Course", badges: ["requiresHp", "killsPlayers"] },
+        { name: "Dodge Course", badges: ["requiresHp"] },
         { name: "Gun Toss", badges: [] },
-        {
-            name: "Bullet Hell",
-            badges: ["firstGame", "requiresHp", "killsPlayers"],
-        },
+        { name: "Bullet Hell", badges: ["requiresHp", "killsPlayers"] },
         { name: "Jump Rope", badges: ["requiresHp", "firstGame"] },
         { name: "Clicker", badges: ["firstGame"] },
-        { name: "Memory", badges: ["killsPlayers"] },
-        {
-            name: "Hide and Seek",
-            badges: [
-                "supportsTeams",
-                "firstGame",
-                "requiresHp",
-                "killsPlayers",
-            ],
-        },
+        { name: "Memory", badges: ["killsPlayers", "firstGame"] },
+        { name: "Hide & Seek", badges: ["supportsTeams", "firstGame"] },
         { name: "Soccer", badges: ["supportsTeams", "firstGame"] },
         { name: "Trivia", badges: ["firstGame"] },
         { name: "Territory", badges: ["supportsTeams", "firstGame"] },
     ];
 
     const total = games.length;
+    const ringRadius = 42; // % of container
+
+    function gamePos(i: number) {
+        const angle = (i / total) * 2 * Math.PI - Math.PI / 2;
+        return {
+            x: 50 + ringRadius * Math.cos(angle),
+            y: 50 + ringRadius * Math.sin(angle),
+            angle: (i / total) * 360 - 90,
+        };
+    }
+
+    // Spoke endpoints for SVG (as % of 100x100 viewBox)
+    function spoke(i: number) {
+        const angle = (i / total) * 2 * Math.PI - Math.PI / 2;
+        return {
+            x1: 50 + 18 * Math.cos(angle),
+            y1: 50 + 18 * Math.sin(angle),
+            x2: 50 + 38 * Math.cos(angle),
+            y2: 50 + 38 * Math.sin(angle),
+        };
+    }
+
+    // Scanline flicker
+    let scanY = $state(0);
+    let scanInterval: ReturnType<typeof setInterval>;
+
+    onMount(() => {
+        scanInterval = setInterval(() => {
+            scanY = Math.random() * 100;
+        }, 80);
+    });
+    onDestroy(() => clearInterval(scanInterval));
 </script>
 
 <svelte:head>
@@ -61,123 +82,198 @@
     ></script>
 </svelte:head>
 
-<div class="min-h-screen bg-stone-950 text-stone-100">
-    <!-- Radial line background decoration -->
+<!-- Dot-grid background -->
+<div
+    class="min-h-screen bg-[#070b0f] text-[#8aa0b0] font-mono relative overflow-x-hidden"
+    style="background-image: radial-gradient(circle, #1a2a3a 1px, transparent 1px); background-size: 28px 28px;"
+>
+    <!-- Ambient vignette -->
     <div
-        class="pointer-events-none fixed inset-0 opacity-5 overflow-hidden"
-        aria-hidden="true"
-    >
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            {#each Array(24) as _, i}
-                <line
-                    x1="50%"
-                    y1="50%"
-                    x2={50 + 60 * Math.cos((i / 24) * 2 * Math.PI) + "%"}
-                    y2={50 + 60 * Math.sin((i / 24) * 2 * Math.PI) + "%"}
-                    stroke="white"
-                    stroke-width="1"
-                />
-            {/each}
-            <circle
-                cx="50%"
-                cy="50%"
-                r="20%"
-                fill="none"
-                stroke="white"
-                stroke-width="1"
-            />
-            <circle
-                cx="50%"
-                cy="50%"
-                r="35%"
-                fill="none"
-                stroke="white"
-                stroke-width="1"
-            />
-            <circle
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fill="none"
-                stroke="white"
-                stroke-width="1"
-            />
-        </svg>
-    </div>
+        class="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#000_100%)] z-0"
+    ></div>
 
-    <div class="relative z-10 p-3 text-2xl">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-4">
         <!-- Navbar -->
-        <div class="ml-2 md:ml-0 mb-4">
+        <div class="mb-6">
             <Navbar>
                 {#snippet header()}
-                    <span
-                        class="text-stone-100 bg-stone-800/80 border border-stone-600 px-3 py-1 rounded-md tracking-widest text-lg uppercase"
-                    >
-                        jb_panoptico_ms
-                    </span>
+                    <div class="flex items-center gap-2 pr-2 font-mono w-full justify-end">
+                        <span
+                            class="text-[10px] text-[#2a5a7a] tracking-widest uppercase"
+                            >map_id:</span
+                        >
+                        <span
+                            class="text-amber-400 tracking-widest uppercase text-sm border border-amber-500/30 px-2 py-0.5"
+                        >
+                            3660237010
+                        </span>
+                    </div>
                 {/snippet}
             </Navbar>
         </div>
 
-        <!-- Description -->
-        <div
-            class="bg-stone-800/70 border border-stone-600 rounded-lg p-3 text-justify text-base md:text-lg tracking-wide mb-8 max-w-3xl mx-auto"
-        >
-            Step inside <em
-                ><a
-                    href="https://steamcommunity.com/sharedfiles/filedetails/"
-                    class="text-amber-400 hover:text-amber-200"
-                    >jb_panoptico_ms</a
-                ></em
-            > — a map built around the architecture of the panopticon, where every
-            cell is visible from the tower at the center. Navigate the ring of minigames
-            that surround the watching eye, if you dare.
+        <!-- Header block -->
+        <div class="border border-[#1a2a3a] mb-6 relative">
+            <div
+                class="absolute top-0 left-4 -translate-y-1/2 bg-[#070b0f] px-2 text-[10px] tracking-[0.3em] text-[#2a5a7a] uppercase"
+            >
+                classified // map profile
+            </div>
+            <div
+                class="p-4 pt-5 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-start"
+            >
+                <div>
+                    <h1
+                        class="text-2xl md:text-3xl tracking-[0.2em] text-[#c8d8e8] uppercase mb-1"
+                    >
+                        <span class="text-gray-400">Jb</span><span
+                            class="text-gray-500">_</span
+                        >Panoptico<span class="text-gray-500">_</span><span
+                            class="text-amber-400">MS</span
+                        >
+                    </h1>
+                    <p class="text-xs text-[#4a6a7a] leading-relaxed max-w-lg">
+                        A map built on the architecture of Bentham's panopticon
+                        — one central tower, surrounded by enemies, and always
+                        watched.
+                        <a
+                            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3660237010"
+                            class="text-amber-500/80 hover:text-amber-300 transition-colors ml-1 underline underline-offset-2"
+                        >
+                            → workshop
+                        </a>
+                    </p>
+                </div>
+                <div
+                    class="text-[10px] text-[#2a4a5a] grid grid-cols-2 gap-x-6 gap-y-0.5 self-start mt-1"
+                >
+                    <span>GAMES</span><span class="text-[#4a8a9a]">{total}</span
+                    >
+                    <span>THEME</span><span class="text-[#4a8a9a]">PRISON</span>
+                    <span>STATUS</span><span class="text-amber-500/70"
+                        >ACTIVE</span
+                    >
+                </div>
+            </div>
         </div>
 
-        <!-- ── Circular layout ── -->
+        <!-- ── Main diagram ── -->
         <div
-            class="relative mx-auto mb-12"
-            style="width: min(90vw, 680px); height: min(90vw, 680px);"
+            class="relative mx-auto mb-8"
+            style="width: min(92vw, 660px); height: min(92vw, 660px);"
         >
-            <!-- Outer ring label -->
-            <div
-                class="absolute inset-0 rounded-full border border-stone-700/40 pointer-events-none"
-            ></div>
-            <div
-                class="absolute inset-[15%] rounded-full border border-stone-600/30 pointer-events-none"
-            ></div>
+            <!-- Blueprint SVG layer — rings, spokes, tick marks -->
+            <svg
+                class="absolute inset-0 w-full h-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <!-- Outer guide ring -->
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="47"
+                    fill="none"
+                    stroke="#0d1f2d"
+                    stroke-width="0.3"
+                    stroke-dasharray="1 2"
+                />
+                <!-- Game ring -->
+                <circle
+                    cx="50"
+                    cy="50"
+                    r={ringRadius}
+                    fill="none"
+                    stroke="#1a2e3e"
+                    stroke-width="0.25"
+                />
+                <!-- Mid ring -->
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="30"
+                    fill="none"
+                    stroke="#0f1e2d"
+                    stroke-width="0.2"
+                    stroke-dasharray="0.5 1.5"
+                />
+                <!-- Inner ring (around carousel) -->
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="18"
+                    fill="none"
+                    stroke="#1a2e3e"
+                    stroke-width="0.3"
+                />
 
-            <!-- Game entries around the circle -->
+                <!-- Spokes -->
+                {#each games as _, i}
+                    {@const s = spoke(i)}
+                    <line
+                        x1={s.x1}
+                        y1={s.y1}
+                        x2={s.x2}
+                        y2={s.y2}
+                        stroke="#1a3040"
+                        stroke-width="0.2"
+                    />
+                    <!-- Tick on outer ring -->
+                    {@const angle = (i / total) * 2 * Math.PI - Math.PI / 2}
+                    <circle
+                        cx={50 + ringRadius * Math.cos(angle)}
+                        cy={50 + ringRadius * Math.sin(angle)}
+                        r="0.6"
+                        fill="#1e3a4a"
+                    />
+                {/each}
+
+                <!-- Cardinal markers -->
+                {#each [0, 90, 180, 270] as deg}
+                    {@const r = (deg * Math.PI) / 180}
+                    <text
+                        x={50 + 45 * Math.cos(r)}
+                        y={50 + 45 * Math.sin(r)}
+                        text-anchor="middle"
+                        dominant-baseline="middle"
+                        font-size="2"
+                        fill="#1a3040"
+                        font-family="monospace">{deg}°</text
+                    >
+                {/each}
+            </svg>
+
+            <!-- Game entries positioned around ring -->
             {#each games as game, i}
-                {@const angle = (i / total) * 360 - 90}
-                {@const rad = (angle * Math.PI) / 180}
-                {@const radius = 45}
-                {@const x = 50 + radius * Math.cos(rad)}
-                {@const y = 50 + radius * Math.sin(rad)}
+                {@const pos = gamePos(i)}
                 <div
                     class="absolute"
-                    style="left: {x}%; top: {y}%; transform: translate(-50%, -50%);"
+                    style="left: {pos.x}%; top: {pos.y}%; transform: translate(-50%, -50%);"
                 >
-                <PanopticoGameEntry name={game.name} angle={(i / total) * 360 - 90}>
+                    <PanopticoGameEntry name={game.name} index={i}>
                         {#snippet emotes()}
-                            {#if game.badges?.includes("firstGame")}<FirstGame
+                            {#if game.badges.includes("firstGame")}<FirstGame
                                 />{/if}
-                            {#if game.badges?.includes("supportsTeams")}<SupportsTeams
+                            {#if game.badges.includes("supportsTeams")}<SupportsTeams
                                 />{/if}
-                            {#if game.badges?.includes("requiresHp")}<RequiresHp
+                            {#if game.badges.includes("requiresHp")}<RequiresHp
                                 />{/if}
-                            {#if game.badges?.includes("killsPlayers")}<KillsPlayers
+                            {#if game.badges.includes("killsPlayers")}<KillsPlayers
                                 />{/if}
                         {/snippet}
                     </PanopticoGameEntry>
                 </div>
             {/each}
 
-            <!-- Center image carousel — the "tower" -->
+            <!-- Center surveillance monitor -->
             <div
-                class="absolute inset-[22%] rounded-full overflow-hidden border-2 border-stone-500 shadow-[0_0_40px_rgba(0,0,0,0.8)] z-10"
+                class="absolute rounded-full overflow-hidden z-10 border border-[#1a3040]"
+                style="
+          inset: 20%;
+          box-shadow: 0 0 0 1px #0d1f2d, 0 0 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,0,0,0.5);
+        "
             >
-                <!-- Replace your swiper-container with this -->
+                <!-- Swiper carousel -->
                 <swiper-container
                     autoplay-delay="3500"
                     loop="true"
@@ -201,41 +297,69 @@
                         <swiper-slide>
                             <img
                                 src={img}
-                                class="w-full h-full object-cover rounded-full"
+                                class="w-full h-full object-cover opacity-80"
                                 alt="jb_panoptico_ms"
                             />
                         </swiper-slide>
                     {/each}
                 </swiper-container>
 
-                <!-- Center overlay label -->
+                <!-- Scanline overlay -->
                 <div
-                    class="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+                    class="absolute inset-0 pointer-events-none z-20"
+                    style="background: repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 3px);"
+                ></div>
+
+                <!-- Moving scanline -->
+                <div
+                    class="absolute inset-x-0 h-px bg-amber-400/10 pointer-events-none z-20 transition-none"
+                    style="top: {scanY}%"
+                ></div>
+
+                <!-- Corner brackets -->
+                <div
+                    class="absolute top-2 left-2 w-3 h-3 border-t border-l border-amber-500/40 pointer-events-none z-30"
+                ></div>
+                <div
+                    class="absolute top-2 right-2 w-3 h-3 border-t border-r border-amber-500/40 pointer-events-none z-30"
+                ></div>
+                <div
+                    class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-amber-500/40 pointer-events-none z-30"
+                ></div>
+                <div
+                    class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-amber-500/40 pointer-events-none z-30"
+                ></div>
+
+                <!-- Monitor label -->
+                <div
+                    class="absolute bottom-3 inset-x-0 flex justify-center pointer-events-none z-30"
                 >
                     <span
-                        class="text-xs md:text-sm text-white/70 tracking-widest uppercase drop-shadow-lg"
+                        class="text-[8px] font-mono tracking-widest text-amber-400/50 uppercase"
                     >
-                        panoptico
+                        ◉ live
                     </span>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile fallback grid (shown only when circle is too small to be usable) -->
-        <div
-            class="block md:hidden bg-stone-900/60 border border-stone-700 rounded-lg p-2 mt-4"
-        >
-            <p
-                class="text-center text-sm text-stone-400 mb-3 tracking-wider uppercase"
+        <!-- Mobile game list fallback -->
+        <div class="md:hidden border border-[#1a2a3a] mb-6">
+            <div
+                class="px-3 py-1.5 border-b border-[#1a2a3a] text-[10px] tracking-widest text-[#2a5a7a] uppercase"
             >
-                Minigames
-            </p>
-            <div class="grid grid-cols-3 gap-1">
-                {#each games as game}
-                    <div
-                        class="bg-stone-800/80 border border-stone-600 rounded p-2 text-center text-xs text-stone-200 tracking-wide"
-                    >
-                        {game.name}
+                cell manifest
+            </div>
+            <div class="grid grid-cols-3 gap-px bg-[#0d1520]">
+                {#each games as game, i}
+                    <div class="bg-[#070b0f] px-2 py-2 text-center">
+                        <span class="block text-[8px] text-[#1a3a4a] mb-0.5"
+                            >{String(i + 1).padStart(2, "0")}</span
+                        >
+                        <span
+                            class="text-[10px] text-[#6a8a9a] uppercase tracking-wide"
+                            >{game.name}</span
+                        >
                     </div>
                 {/each}
             </div>
