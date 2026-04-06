@@ -99,10 +99,10 @@
       <div class="content-center">
         <span class="text-2xl">Hello, World</span>
         <div class="text-2xl">
-          <p>I'm <span class="font-bold">MSWS</span></p>
+          <p>I'm <span class="font-bold">Isaac</span></p>
         </div>
         <br class="sm:invisible" />
-        <span class="text-sm">a.k.a Isaac</span>
+        <span class="text-sm">a.k.a MSWS</span>
         <div class="flex-row flex text-sm gap-x-1">
           <div class="flex-col">
             <div>
@@ -123,7 +123,7 @@
     </div>
 
     <div
-      class="flex flex-row gap-x-2 md:gap-x-4 rounded-xl p-2 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
+      class="flex flex-row gap-x-2 md:gap-x-4 rounded-2xl p-2 py-1 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
         href="https://msws.xyz/s/github"
@@ -300,7 +300,7 @@
           </div>
 
           <div
-            class="flex w-full h-64 md:h-96 overflow-hidden shadow-2xl"
+            class="flex w-full h-64 md:h-80 overflow-hidden"
           >
             {#each panels as panel, i}
               <a
