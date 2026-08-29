@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
   import logo from "$lib/assets/LOGO.png";
-  import spigot from "$lib/assets/spigot.png";
+  import wikipedia from "$lib/assets/wikipedia.svg";
   import coffee from "$lib/assets/bmc-logo.svg";
   import gitea from "$lib/assets/gitea.webp";
 
@@ -38,7 +38,7 @@
     },
     {
       href: "/jb/panoptico",
-      bg: "https://files.msws.xyz/public/img/6aa4d98eeb915751.jpg?k=B6KAUX4P7ozhbFiF&cache",
+      bg: "https://images.steamusercontent.com/ugc/15197420070097159751/D8CBF678DF322004B469DB2ED1E10BFE4886F51D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
       label: "jb_panoptico_ms",
       labelColor: "text-slate-300",
       isLocal: false,
@@ -123,7 +123,7 @@
     </div>
 
     <div
-      class="flex flex-row gap-x-2 md:gap-x-4 rounded-2xl p-2 py-1 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
+      class="flex flex-row gap-x-4 rounded-2xl p-2 py-1 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
         href="https://msws.xyz/s/github"
@@ -160,13 +160,13 @@
         ></i>
       </a>
       <a
-        href="https://msws.xyz/s/spigot"
+        href="https://msws.xyz/s/wiki"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          src={spigot}
-          alt="Spigot Logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+          alt="Wikipedia Logo"
           class="size-14 hover:scale-110 transition-transform
           saturate-30 hover:saturate-100"
         />
