@@ -116,7 +116,7 @@
             <div>
               <a href="mailto:contact@msws.xyz">contact@msws.xyz</a>
             </div>
-            <div>MSWS</div>
+            <div>MSWS (<a href="./s/discord" class="text-xs underline">Join Server</a>)</div>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
       class="flex flex-row gap-x-4 rounded-2xl p-2 py-1 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
-        href="https://msws.xyz/s/github"
+        href="./s/github"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
@@ -136,7 +136,7 @@
         ></i>
       </a>
       <a
-        href="https://msws.xyz/s/yt"
+        href="./s/yt"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="YouTube"
@@ -147,7 +147,7 @@
         ></i>
       </a>
       <a
-        href="https://msws.xyz/s/steam"
+        href="./s/steam"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Steam"
@@ -160,7 +160,7 @@
         ></i>
       </a>
       <a
-        href="https://msws.xyz/s/wiki"
+        href="./s/wiki"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -172,7 +172,7 @@
         />
       </a>
       <a
-        href="https://msws.xyz/s/donate"
+        href="./s/donate"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -299,9 +299,7 @@
             <div>S</div>
           </div>
 
-          <div
-            class="flex w-full h-64 md:h-80 overflow-hidden"
-          >
+          <div class="flex w-full h-64 md:h-80 overflow-hidden">
             {#each panels as panel, i}
               <a
                 href={panel.href}
