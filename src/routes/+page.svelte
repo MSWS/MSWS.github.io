@@ -116,7 +116,7 @@
             <div>
               <a href="mailto:contact@msws.xyz">contact@msws.xyz</a>
             </div>
-            <div>MSWS (<a href="./s/discord" class="text-xs underline">Join Server</a>)</div>
+            <div>MSWS (<a href="https://msws.xyz/discord" class="text-xs underline">Join Server</a>)</div>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
       class="flex flex-row gap-x-4 rounded-2xl p-2 py-1 m-4 items-center bg-black/5 hover:bg-black/10 min-w-max transition-colors duration-300"
     >
       <a
-        href="./s/github"
+        href="https://msws.xyz/github"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
@@ -136,7 +136,7 @@
         ></i>
       </a>
       <a
-        href="./s/yt"
+        href="https://msws.xyz/yt"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="YouTube"
@@ -147,7 +147,7 @@
         ></i>
       </a>
       <a
-        href="./s/steam"
+        href="https://msws.xyz/steam"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Steam"
@@ -160,7 +160,7 @@
         ></i>
       </a>
       <a
-        href="./s/wiki"
+        href="https://msws.xyz/wiki"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -172,7 +172,7 @@
         />
       </a>
       <a
-        href="./s/donate"
+        href="https://msws.xyz/donate"
         target="_blank"
         rel="noopener noreferrer"
       >
