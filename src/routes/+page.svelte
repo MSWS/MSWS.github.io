@@ -116,7 +116,7 @@
             <div>
               <a href="mailto:contact@msws.xyz">contact@msws.xyz</a>
             </div>
-            <div>MSWS (<a href="https://msws.xyz/discord" class="text-xs underline">Join Server</a>)</div>
+            <div>MSWS (<a href="https://msws.xyz/s/discord" class="text-xs underline">Join Server</a>)</div>
           </div>
         </div>
       </div>
